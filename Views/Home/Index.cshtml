@@ -1,0 +1,35 @@
+﻿@model List<BookstoreCustomer.Models.Book>
+@{
+    ViewData["Title"] = "Welcome to BookStore";
+}
+
+<div class="jumbotron bg-light p-5 rounded-3 mb-4">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Welcome to BookStore</h1>
+        <p class="col-md-8 fs-4">Discover your next favorite book from our extensive collection</p>
+        <a href="@Url.Action("Index", "Books")" class="btn btn-primary btn-lg">Browse All Books</a>
+    </div>
+</div>
+
+<div class="container">
+    <h2 class="mb-4">Featured Books</h2>
+    <div class="row">
+        @foreach (var book in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">@book.Title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">by @book.Author</h6>
+                        <p class="card-text">@(book.Description.Length > 100 ? book.Description.Substring(0, 100) + "..." : book.Description)</p>
+                        <p class="card-text"><strong>$@book.Price.ToString("F2")</strong></p>
+                        <span class="badge bg-info text-dark">@book.Category</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="@Url.Action("Details", "Books", new { id = book.Id })" class="btn btn-sm btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

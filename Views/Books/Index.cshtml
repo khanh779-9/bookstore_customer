@@ -1,0 +1,67 @@
+@model List<BookstoreCustomer.Models.Book>
+@{
+    ViewData["Title"] = "Books";
+}
+
+<div class="container">
+    <h1 class="mb-4">Our Book Collection</h1>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <form method="get" asp-action="Index" class="d-flex">
+                <input type="text" name="search" class="form-control me-2" placeholder="Search books..." value="@ViewBag.SearchTerm">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="btn-group float-end" role="group">
+                <a href="@Url.Action("Index")" class="btn btn-outline-secondary @(ViewBag.Category == null ? "active" : "")">All</a>
+                @if (ViewBag.Categories != null)
+                {
+                    @foreach (var category in ViewBag.Categories as List<string>)
+                    {
+                        <a href="@Url.Action("Index", new { category = category })" 
+                           class="btn btn-outline-secondary @(ViewBag.Category == category ? "active" : "")">@category</a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-info">
+            <p>No books found matching your criteria.</p>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var book in Model)
+            {
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">@book.Title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">@book.Author</h6>
+                            <p class="card-text small">@(book.Description.Length > 80 ? book.Description.Substring(0, 80) + "..." : book.Description)</p>
+                            <p class="card-text"><strong>$@book.Price.ToString("F2")</strong></p>
+                            <span class="badge bg-info text-dark">@book.Category</span>
+                            @if (book.Stock > 0)
+                            {
+                                <span class="badge bg-success">In Stock</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Out of Stock</span>
+                            }
+                        </div>
+                        <div class="card-footer">
+                            <a href="@Url.Action("Details", new { id = book.Id })" class="btn btn-sm btn-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
