@@ -80,7 +80,10 @@ class ApiController
         $provided = null;
         // Prefer header
         foreach (getallheaders() as $hn => $hv) {
-            if (strtolower($hn) === 'x-api-key') { $provided = $hv; break; }
+            if (strtolower($hn) === 'x-api-key') {
+                $provided = $hv;
+                break;
+            }
         }
         if ($provided === null && isset($_GET['api_key'])) $provided = $_GET['api_key'];
 
@@ -209,7 +212,9 @@ class ApiController
             $total = count($all);
             $items = array_slice($all, ($page - 1) * $perPage, $perPage);
             // hide password hashes
-            foreach ($items as &$i) { unset($i['password']); }
+            foreach ($items as &$i) {
+                unset($i['password']);
+            }
             self::respondJson(['success' => true, 'page' => $page, 'per_page' => $perPage, 'total' => $total, 'items' => $items]);
         } catch (Exception $e) {
             self::respondJson(['success' => false, 'error' => $e->getMessage()], 500);
@@ -234,7 +239,9 @@ class ApiController
             }
             $total = count($all);
             $items = array_slice($all, ($page - 1) * $perPage, $perPage);
-            foreach ($items as &$i) { unset($i['password']); }
+            foreach ($items as &$i) {
+                unset($i['password']);
+            }
             self::respondJson(['success' => true, 'page' => $page, 'per_page' => $perPage, 'total' => $total, 'items' => $items]);
         } catch (Exception $e) {
             self::respondJson(['success' => false, 'error' => $e->getMessage()], 500);

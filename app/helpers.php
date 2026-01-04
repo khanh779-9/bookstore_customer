@@ -1,6 +1,7 @@
 <?php
 
-function compareTimes($time1, $time2) { 
+function compareTimes($time1, $time2)
+{
     $t1 = new DateTime($time1);
     $t2 = new DateTime($time2);
     if ($t1 < $t2) {
@@ -24,15 +25,18 @@ function compareTimes($time1, $time2) {
 }
 
 
-function validate_email($email) {
+function validate_email($email)
+{
     return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
 }
 
-function validate_phone($phone) {
+function validate_phone($phone)
+{
     return preg_match('/^0\d{9}$/', $phone);
 }
 
-function validate_required_fields($fields) {
+function validate_required_fields($fields)
+{
     $missing = [];
     foreach ($fields as $field) {
         if (empty(trim($_POST[$field] ?? ''))) $missing[] = $field;
@@ -40,53 +44,124 @@ function validate_required_fields($fields) {
     return $missing;
 }
 
-function sanitize_string($str) { return htmlspecialchars(trim($str), ENT_QUOTES, 'UTF-8'); }
+function sanitize_string($str)
+{
+    return htmlspecialchars(trim($str), ENT_QUOTES, 'UTF-8');
+}
 
-function format_price($price) { return number_format($price, 0, ',', '.') . 'đ'; }
+function format_price($price)
+{
+    return number_format($price, 0, ',', '.') . 'đ';
+}
 
-function truncate_text($text, $length = 100, $suffix = '...') { return mb_strlen($text) <= $length ? $text : mb_substr($text,0,$length) . $suffix; }
+function truncate_text($text, $length = 100, $suffix = '...')
+{
+    return mb_strlen($text) <= $length ? $text : mb_substr($text, 0, $length) . $suffix;
+}
 
 // Simple DB helpers
-function db_fetch_one($query, $params = []) { $pdo = \Database::getInstance(); $stmt = $pdo->prepare($query); $stmt->execute($params); return $stmt->fetch(PDO::FETCH_ASSOC) ?: []; }
-function db_fetch_all($query, $params = []) { $pdo = \Database::getInstance(); $stmt = $pdo->prepare($query); $stmt->execute($params); return $stmt->fetchAll(PDO::FETCH_ASSOC); }
-function db_execute($query, $params = []) { $pdo = \Database::getInstance(); $stmt = $pdo->prepare($query); $result = $stmt->execute($params); return $result ? $stmt->rowCount() : false; }
+function db_fetch_one($query, $params = [])
+{
+    $pdo = \Database::getInstance();
+    $stmt = $pdo->prepare($query);
+    $stmt->execute($params);
+    return $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
+}
+function db_fetch_all($query, $params = [])
+{
+    $pdo = \Database::getInstance();
+    $stmt = $pdo->prepare($query);
+    $stmt->execute($params);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+function db_execute($query, $params = [])
+{
+    $pdo = \Database::getInstance();
+    $stmt = $pdo->prepare($query);
+    $result = $stmt->execute($params);
+    return $result ? $stmt->rowCount() : false;
+}
 
 // Simple cache (session)
-function cache_get($key, $default = null) { return $_SESSION['cache_'.$key] ?? $default; }
-function cache_set($key, $value, $ttl = 3600) { $_SESSION['cache_'.$key] = $value; $_SESSION['cache_'.$key.'_expire'] = time()+$ttl; }
-function cache_has($key) { if (!isset($_SESSION['cache_'.$key])) return false; $exp = $_SESSION['cache_'.$key.'_expire'] ?? 0; if ($exp < time()) { unset($_SESSION['cache_'.$key]); unset($_SESSION['cache_'.$key.'_expire']); return false; } return true; }
-function cache_forget($key) { unset($_SESSION['cache_'.$key]); unset($_SESSION['cache_'.$key.'_expire']); }
-function cache_remember($key,$ttl,$cb){ if(cache_has($key)) return cache_get($key); $v = $cb(); cache_set($key,$v,$ttl); return $v; }
+function cache_get($key, $default = null)
+{
+    return $_SESSION['cache_' . $key] ?? $default;
+}
+function cache_set($key, $value, $ttl = 3600)
+{
+    $_SESSION['cache_' . $key] = $value;
+    $_SESSION['cache_' . $key . '_expire'] = time() + $ttl;
+}
+function cache_has($key)
+{
+    if (!isset($_SESSION['cache_' . $key])) return false;
+    $exp = $_SESSION['cache_' . $key . '_expire'] ?? 0;
+    if ($exp < time()) {
+        unset($_SESSION['cache_' . $key]);
+        unset($_SESSION['cache_' . $key . '_expire']);
+        return false;
+    }
+    return true;
+}
+function cache_forget($key)
+{
+    unset($_SESSION['cache_' . $key]);
+    unset($_SESSION['cache_' . $key . '_expire']);
+}
+function cache_remember($key, $ttl, $cb)
+{
+    if (cache_has($key)) return cache_get($key);
+    $v = $cb();
+    cache_set($key, $v, $ttl);
+    return $v;
+}
 
 // Status helpers
-function get_order_status_badge($s){ $m=['cho_xac_nhan'=>'warning','da_xac_nhan'=>'info','dang_giao_hang'=>'primary','da_giao_hang'=>'success','da_huy'=>'danger']; return $m[$s] ?? 'secondary'; }
-function translate_order_status($s){ $t=['cho_xac_nhan'=>'Chờ xác nhận','da_xac_nhan'=>'Đã xác nhận','dang_giao_hang'=>'Đang giao hàng','da_giao_hang'=>'Đã giao hàng','da_huy'=>'Đã hủy']; return $t[$s] ?? $s; }
+function get_order_status_badge($s)
+{
+    $m = ['cho_xac_nhan' => 'warning', 'da_xac_nhan' => 'info', 'dang_giao_hang' => 'primary', 'da_giao_hang' => 'success', 'da_huy' => 'danger'];
+    return $m[$s] ?? 'secondary';
+}
+function translate_order_status($s)
+{
+    $t = ['cho_xac_nhan' => 'Chờ xác nhận', 'da_xac_nhan' => 'Đã xác nhận', 'dang_giao_hang' => 'Đang giao hàng', 'da_giao_hang' => 'Đã giao hàng', 'da_huy' => 'Đã hủy'];
+    return $t[$s] ?? $s;
+}
 
 // get paid method label
-function translate_payment_method($pm){ $t=['tien_mat'=>'Tiền mặt','chuyen_khoan'=>'Chuyển khoản','momo'=>'MoMo','zalopay'=>'ZaloPay']; return $t[$pm] ?? $pm; }
+function translate_payment_method($pm)
+{
+    $t = ['tien_mat' => 'Tiền mặt', 'chuyen_khoan' => 'Chuyển khoản', 'momo' => 'MoMo', 'zalopay' => 'ZaloPay'];
+    return $t[$pm] ?? $pm;
+}
 
 // Get product image path with fallback
-function get_product_image($imageName, $default = 'assets/images/products/defaultProduct.png') {
+function get_product_image($imageName, $default = 'assets/images/products/defaultProduct.png')
+{
     if (empty($imageName)) return $default;
     $path = 'assets/images/products/' . $imageName;
     return file_exists($path) ? $path : $default;
 }
 
 // Category helpers
-function is_book_category($danhmucSP_id): bool {
+function is_book_category($danhmucSP_id): bool
+{
     return ((int)$danhmucSP_id === 1);
 }
 
-function is_stationery_category($danhmucSP_id): bool {
+function is_stationery_category($danhmucSP_id): bool
+{
     return ((int)$danhmucSP_id === 2);
 }
 
-function is_other_category($danhmucSP_id): bool {
+function is_other_category($danhmucSP_id): bool
+{
     $id = (int)$danhmucSP_id;
     return !is_book_category($id) && !is_stationery_category($id);
 }
 
-function get_category_name($danhmucSP_id): string {
+function get_category_name($danhmucSP_id): string
+{
     if (class_exists('CategoriesModel')) {
         $row = CategoriesModel::getCategory((int)$danhmucSP_id);
         if (!empty($row) && is_array($row)) {
@@ -98,17 +173,23 @@ function get_category_name($danhmucSP_id): string {
     return '';
 }
 
-function product_category_badge_class($danhmucSP_id): string {
+function product_category_badge_class($danhmucSP_id): string
+{
     if (is_book_category($danhmucSP_id)) return 'primary';
     if (is_stationery_category($danhmucSP_id)) return 'info';
     return 'secondary';
 }
 
 // Employee status badge
-function get_employee_status_badge($status) { $badges = ['dang_lam'=>'success','nghi_viec'=>'danger','tam_nghi'=>'warning']; return $badges[$status] ?? 'secondary'; }
+function get_employee_status_badge($status)
+{
+    $badges = ['dang_lam' => 'success', 'nghi_viec' => 'danger', 'tam_nghi' => 'warning'];
+    return $badges[$status] ?? 'secondary';
+}
 
 // CSRF helpers
-function generate_csrf_token($force = false) {
+function generate_csrf_token($force = false)
+{
     if ($force || empty($_SESSION['csrf_token'])) {
         try {
             $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
@@ -120,7 +201,8 @@ function generate_csrf_token($force = false) {
     return $_SESSION['csrf_token'];
 }
 
-function verify_csrf_token($token = null) {
+function verify_csrf_token($token = null)
+{
     $token = $token ?: ($_POST['csrf_token'] ?? $_POST['_csrf'] ?? null);
     if (empty($token)) {
         if (!empty($_SERVER['HTTP_X_CSRF_TOKEN'])) $token = $_SERVER['HTTP_X_CSRF_TOKEN'];
@@ -131,7 +213,8 @@ function verify_csrf_token($token = null) {
     return hash_equals($_SESSION['csrf_token'], $token);
 }
 
-function require_csrf_or_redirect($token = null, $redirect = 'index.php') {
+function require_csrf_or_redirect($token = null, $redirect = 'index.php')
+{
     $token = $token ?: ($_POST['csrf_token'] ?? $_POST['_csrf'] ?? null);
     if (!verify_csrf_token($token)) {
         $_SESSION['error'] = 'Yêu cầu không hợp lệ (CSRF). Vui lòng thử lại.';
@@ -141,13 +224,15 @@ function require_csrf_or_redirect($token = null, $redirect = 'index.php') {
 }
 
 // Lightweight application logger
-function app_log($message, $level = 'INFO') {
+function app_log($message, $level = 'INFO')
+{
     $msg = sprintf("[%s] %s: %s", date('Y-m-d H:i:s'), $level, $message);
     error_log($msg);
 }
 
 
-function getLoginAgent() {
+function getLoginAgent()
+{
     $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
     if (strpos($userAgent, 'Chrome') !== false) {
         $browser = "Chrome";
@@ -194,7 +279,8 @@ function getLoginAgent() {
 
 
 // Hàm helper để tính giá khuyến mãi cho sản phẩm
-function get_product_promotion_price($productId, $basePrice) {
+function get_product_promotion_price($productId, $basePrice)
+{
     $promotion = null;
     $discountedPrice = null;
     if (class_exists('PromotionModel')) {
@@ -211,7 +297,8 @@ function get_product_promotion_price($productId, $basePrice) {
     return ['promotion' => $promotion, 'discounted_price' => $discountedPrice];
 }
 
-function render_product_card($product) {
+function render_product_card($product)
+{
     $id = $product['sanpham_id'] ?? $product['id'] ?? 0;
     $name = $product['name'] ?? $product['tenSach'] ?? $product['tenVPP'] ?? 'Sản phẩm';
     $price = $product['gia'] ?? 0;
@@ -220,7 +307,7 @@ function render_product_card($product) {
     $reviews = ReviewsModel::getAllReviewsByProductId($id) ?? [];
     $ratingCount = count($reviews);
     $avgRating = $ratingCount ? round(array_sum(array_column($reviews, 'rating')) / $ratingCount, 1) : null;
-    
+
     // Lấy khuyến mãi áp dụng cho sản phẩm
     $promotion = null;
     $discountedPrice = null;
@@ -235,9 +322,9 @@ function render_product_card($product) {
             $promotion = null;
         }
     }
-    
+
     ob_start();
-    ?>
+?>
     <div class="col-6 col-sm-6 col-md-4 col-lg-3">
         <div class="card h-100 shadow-sm border-0 product-card">
             <a href="index.php?page=productview&id=<?= htmlspecialchars($id) ?>" class="text-decoration-none text-dark">
@@ -280,11 +367,12 @@ function render_product_card($product) {
             </div>
         </div>
     </div>
-    <?php
+<?php
     return ob_get_clean();
 }
 
-function render_product_table_row($product, $index) {
+function render_product_table_row($product, $index)
+{
     $id = $product['sanpham_id'] ?? 0;
     $name = $product['name'] ?? $product['tenSach'] ?? $product['tenVPP'] ?? 'N/A';
     $price = $product['gia'] ?? 0;
@@ -292,7 +380,7 @@ function render_product_table_row($product, $index) {
     $category = $product['category_name'] ?? 'N/A';
     $stockClass = $stock <= 10 ? 'text-danger fw-bold' : ($stock <= 30 ? 'text-warning' : 'text-success');
     ob_start();
-    ?>
+?>
     <tr>
         <td><?= $index ?></td>
         <td><?= htmlspecialchars($name) ?></td>
@@ -309,32 +397,34 @@ function render_product_table_row($product, $index) {
             </form>
         </td>
     </tr>
-    <?php
+<?php
     return ob_get_clean();
 }
 
-function render_form_input($name, $label, $value = '', $type = 'text', $required = false, $attributes = []) {
+function render_form_input($name, $label, $value = '', $type = 'text', $required = false, $attributes = [])
+{
     $requiredAttr = $required ? 'required' : '';
     $requiredMark = $required ? '<span class="text-danger">*</span>' : '';
     $attrStr = '';
     foreach ($attributes as $key => $val) $attrStr .= sprintf(' %s="%s"', htmlspecialchars($key), htmlspecialchars($val));
     ob_start();
-    ?>
+?>
     <div class="mb-3">
         <label for="<?= htmlspecialchars($name) ?>" class="form-label"><?= htmlspecialchars($label) ?> <?= $requiredMark ?></label>
         <input type="<?= htmlspecialchars($type) ?>" class="form-control" id="<?= htmlspecialchars($name) ?>" name="<?= htmlspecialchars($name) ?>" value="<?= htmlspecialchars($value) ?>" <?= $requiredAttr ?> <?= $attrStr ?> />
     </div>
-    <?php
+<?php
     return ob_get_clean();
 }
 
-function render_form_select($name, $label, $options, $selected = '', $required = false, $attributes = []) {
+function render_form_select($name, $label, $options, $selected = '', $required = false, $attributes = [])
+{
     $requiredAttr = $required ? 'required' : '';
     $requiredMark = $required ? '<span class="text-danger">*</span>' : '';
     $attrStr = '';
     foreach ($attributes as $key => $val) $attrStr .= sprintf(' %s="%s"', htmlspecialchars($key), htmlspecialchars($val));
     ob_start();
-    ?>
+?>
     <div class="mb-3">
         <label for="<?= htmlspecialchars($name) ?>" class="form-label"><?= htmlspecialchars($label) ?> <?= $requiredMark ?></label>
         <select class="form-select" id="<?= htmlspecialchars($name) ?>" name="<?= htmlspecialchars($name) ?>" <?= $requiredAttr ?> <?= $attrStr ?>>
@@ -343,98 +433,139 @@ function render_form_select($name, $label, $options, $selected = '', $required =
             <?php endforeach; ?>
         </select>
     </div>
-    <?php
+<?php
     return ob_get_clean();
 }
 
-function render_form_textarea($name, $label, $value = '', $required = false, $rows = 3, $attributes = []) {
+function render_form_textarea($name, $label, $value = '', $required = false, $rows = 3, $attributes = [])
+{
     $requiredAttr = $required ? 'required' : '';
     $requiredMark = $required ? '<span class="text-danger">*</span>' : '';
     $attrStr = '';
     foreach ($attributes as $key => $val) $attrStr .= sprintf(' %s="%s"', htmlspecialchars($key), htmlspecialchars($val));
     ob_start();
-    ?>
+?>
     <div class="mb-3">
         <label for="<?= htmlspecialchars($name) ?>" class="form-label"><?= htmlspecialchars($label) ?> <?= $requiredMark ?></label>
         <textarea class="form-control" id="<?= htmlspecialchars($name) ?>" name="<?= htmlspecialchars($name) ?>" rows="<?= $rows ?>" <?= $requiredAttr ?> <?= $attrStr ?>><?= htmlspecialchars($value) ?></textarea>
     </div>
-    <?php
+<?php
     return ob_get_clean();
 }
 
-function render_status_badge($status, $type = 'order') {
+function render_status_badge($status, $type = 'order')
+{
     $badgeClass = $type === 'order' ? get_order_status_badge($status) : get_employee_status_badge($status);
     $label = $type === 'order' ? translate_order_status($status) : $status;
     return sprintf('<span class="badge bg-%s">%s</span>', htmlspecialchars($badgeClass), htmlspecialchars($label));
 }
 
-function render_breadcrumb($items) {
+function render_breadcrumb($items)
+{
     ob_start();
-    ?>
-    <nav aria-label="breadcrumb"><ol class="breadcrumb">
-        <?php foreach ($items as $url => $label): ?>
-            <?php if ($url === '#' || $url === ''): ?>
-                <li class="breadcrumb-item active" aria-current="page"><?= htmlspecialchars($label) ?></li>
-            <?php else: ?>
-                <li class="breadcrumb-item"><a href="<?= htmlspecialchars($url) ?>"><?= htmlspecialchars($label) ?></a></li>
-            <?php endif; ?>
-        <?php endforeach; ?>
-    </ol></nav>
-    <?php
+?>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <?php foreach ($items as $url => $label): ?>
+                <?php if ($url === '#' || $url === ''): ?>
+                    <li class="breadcrumb-item active" aria-current="page"><?= htmlspecialchars($label) ?></li>
+                <?php else: ?>
+                    <li class="breadcrumb-item"><a href="<?= htmlspecialchars($url) ?>"><?= htmlspecialchars($label) ?></a></li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </ol>
+    </nav>
+<?php
     return ob_get_clean();
 }
 
-function render_empty_state($title = 'Không có dữ liệu', $message = '', $icon = 'inbox') {
+function render_empty_state($title = 'Không có dữ liệu', $message = '', $icon = 'inbox')
+{
     ob_start();
-    ?>
+?>
     <div class="text-center py-5">
         <i class="bi bi-<?= htmlspecialchars($icon) ?> display-1 text-muted"></i>
         <h4 class="mt-3"><?= htmlspecialchars($title) ?></h4>
         <?php if ($message): ?><p class="text-muted"><?= htmlspecialchars($message) ?></p><?php endif; ?>
     </div>
-    <?php
+<?php
     return ob_get_clean();
 }
 
-function render_loading_spinner($text = 'Đang tải...') {
+function render_loading_spinner($text = 'Đang tải...')
+{
     ob_start();
-    ?>
+?>
     <div class="text-center py-5">
         <div class="spinner-border text-primary" role="status"><span class="visually-hidden"><?= htmlspecialchars($text) ?></span></div>
         <p class="mt-2 text-muted"><?= htmlspecialchars($text) ?></p>
     </div>
-    <?php
+<?php
     return ob_get_clean();
 }
 
-function render_confirm_modal($id, $title, $message, $confirmText = 'Xác nhận', $cancelText = 'Hủy') {
+function render_confirm_modal($id, $title, $message, $confirmText = 'Xác nhận', $cancelText = 'Hủy')
+{
     ob_start();
-    ?>
+?>
     <div class="modal fade" id="<?= htmlspecialchars($id) ?>" tabindex="-1">
-        <div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title"><?= htmlspecialchars($title) ?></h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><?= htmlspecialchars($message) ?></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= htmlspecialchars($cancelText) ?></button><button type="button" class="btn btn-primary" id="<?= htmlspecialchars($id) ?>-confirm"><?= htmlspecialchars($confirmText) ?></button></div></div></div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><?= htmlspecialchars($title) ?></h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body"><?= htmlspecialchars($message) ?></div>
+                <div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= htmlspecialchars($cancelText) ?></button><button type="button" class="btn btn-primary" id="<?= htmlspecialchars($id) ?>-confirm"><?= htmlspecialchars($confirmText) ?></button></div>
+            </div>
+        </div>
     </div>
-    <?php
+<?php
     return ob_get_clean();
 }
 
-function render_data_table($columns, $data, $actions = []) {
+function render_data_table($columns, $data, $actions = [])
+{
     ob_start();
-    ?>
-    <div class="table-responsive"><table class="table table-hover table-striped"><thead><tr><?php foreach ($columns as $col): ?><th><?= htmlspecialchars($col) ?></th><?php endforeach; if (!empty($actions)) echo '<th>Thao tác</th>'; ?></tr></thead><tbody><?php if (empty($data)): ?><tr><td colspan="<?= count($columns) + (!empty($actions) ? 1 : 0) ?>" class="text-center text-muted">Không có dữ liệu</td></tr><?php else: foreach ($data as $row): ?><tr><?php foreach (array_keys($columns) as $key): ?><td><?= htmlspecialchars($row[$key] ?? '') ?></td><?php endforeach; if (!empty($actions)): ?><td><?php foreach ($actions as $action): ?><?= $action($row) ?><?php endforeach; ?></td><?php endif; ?></tr><?php endforeach; endif; ?></tbody></table></div>
-    <?php
+?>
+    <div class="table-responsive">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr><?php foreach ($columns as $col): ?><th><?= htmlspecialchars($col) ?></th><?php endforeach;
+                                                                                            if (!empty($actions)) echo '<th>Thao tác</th>'; ?></tr>
+            </thead>
+            <tbody><?php if (empty($data)): ?><tr>
+                        <td colspan="<?= count($columns) + (!empty($actions) ? 1 : 0) ?>" class="text-center text-muted">Không có dữ liệu</td>
+                    </tr><?php else: foreach ($data as $row): ?><tr><?php foreach (array_keys($columns) as $key): ?><td><?= htmlspecialchars($row[$key] ?? '') ?></td><?php endforeach;
+                                                                                                                                                                    if (!empty($actions)): ?><td><?php foreach ($actions as $action): ?><?= $action($row) ?><?php endforeach; ?></td><?php endif; ?></tr><?php endforeach;
+                                                                                                                                                                                                                                                                                                                        endif; ?></tbody>
+        </table>
+    </div>
+<?php
     return ob_get_clean();
 }
 
-function render_stats_card($title, $value, $icon, $bgColor = 'primary', $subtext = '') {
+function render_stats_card($title, $value, $icon, $bgColor = 'primary', $subtext = '')
+{
     ob_start();
-    ?>
-    <div class="card bg-<?= htmlspecialchars($bgColor) ?> text-white"><div class="card-body"><div class="d-flex justify-content-between align-items-center"><div><h6 class="card-title mb-1"><?= htmlspecialchars($title) ?></h6><h3 class="mb-0"><?= htmlspecialchars($value) ?></h3><?php if ($subtext): ?><small><?= htmlspecialchars($subtext) ?></small><?php endif; ?></div><div><i class="bi bi-<?= htmlspecialchars($icon) ?> display-4 opacity-50"></i></div></div></div></div>
-    <?php
+?>
+    <div class="card bg-<?= htmlspecialchars($bgColor) ?> text-white">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="card-title mb-1"><?= htmlspecialchars($title) ?></h6>
+                    <h3 class="mb-0"><?= htmlspecialchars($value) ?></h3><?php if ($subtext): ?><small><?= htmlspecialchars($subtext) ?></small><?php endif; ?>
+                </div>
+                <div><i class="bi bi-<?= htmlspecialchars($icon) ?> display-4 opacity-50"></i></div>
+            </div>
+        </div>
+    </div>
+<?php
     return ob_get_clean();
 }
 
 // Pagination helper for views
-function render_pagination_controls($pagination = null, string $pageName = null, array $extraQuery = []): string {
+function render_pagination_controls($pagination = null, string $pageName = null, array $extraQuery = []): string
+{
     // Accept null or non-array $pagination for backward compatibility
     if (empty($pagination) || !is_array($pagination) || intval($pagination['total_pages'] ?? 0) <= 1) return '';
     $qp = $_GET;
@@ -445,7 +576,7 @@ function render_pagination_controls($pagination = null, string $pageName = null,
     $start = max(1, $currentP - 2);
     $end = min($tp, $currentP + 2);
     ob_start();
-    ?>
+?>
     <nav aria-label="Page navigation" class="mt-3">
         <ul class="pagination">
             <li class="page-item <?= $currentP <= 1 ? 'disabled' : '' ?>">
@@ -462,8 +593,6 @@ function render_pagination_controls($pagination = null, string $pageName = null,
             </li>
         </ul>
     </nav>
-    <?php
+<?php
     return ob_get_clean();
 }
-
-?>

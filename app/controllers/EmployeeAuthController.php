@@ -17,7 +17,7 @@ class EmployeeAuthController
             return self::redirect('index.php?page=employee_login');
         }
 
-        $employee = EmployeeModel:: findEmployeeByCode($ma_nhan_vien);
+        $employee = EmployeeModel::findEmployeeByCode($ma_nhan_vien);
 
         if (!$employee) {
             $_SESSION['error'] = 'Mã nhân viên hoặc mật khẩu không đúng.';
@@ -90,7 +90,7 @@ class EmployeeAuthController
     public static function employeeLogout(): void
     {
         $_SESSION['success'] = 'Bạn đã đăng xuất thành công.';
-        
+
         if (ini_get('session.use_cookies')) {
             $p = session_get_cookie_params();
             setcookie(session_name(), '', time() - 3600, $p['path'], $p['domain'], $p['secure'], $p['httponly']);
@@ -140,6 +140,3 @@ class EmployeeAuthController
         exit;
     }
 }
-
-?>
-
