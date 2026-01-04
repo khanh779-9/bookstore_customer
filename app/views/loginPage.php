@@ -31,14 +31,14 @@
                             <label class="form-label small fw-medium">Email</label>
                             <input type="email" name="email" class="form-control"
                                 value=""
-                                placeholder="nhập email" required>
+                                placeholder="Nhập email" required>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label small fw-medium">Mật khẩu</label>
                             <div class="position-relative">
                                 <input id="login_password" type="password" name="password" class="form-control"
-                                    placeholder="nhập mật khẩu" required>
+                                    placeholder="Nhập mật khẩu" required>
                                   <i id="login_toggle" class="bi bi-eye-fill position-absolute" style="right:16px;top:50%;transform: translateY(-50%);cursor:pointer;font-size:1.1rem;"></i>
                             </div>
                         </div>
