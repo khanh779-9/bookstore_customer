@@ -19,7 +19,7 @@ class AuthController extends BaseController
             return $this->redirect('index.php?page=login');
         }
 
-        $user = CustomerModel:: findCustomerByEmail($email);
+        $user = CustomerModel::findCustomerByEmail($email);
 
         if (!$user) {
             $_SESSION['error'] = 'Email hoặc mật khẩu không đúng.';
@@ -89,7 +89,7 @@ class AuthController extends BaseController
 
         $agent = getLoginAgent();
 
-        NotificationModel:: createNotification(
+        NotificationModel::createNotification(
             $customer['id'],
             'Đăng nhập tài khoản',
             "Phát hiện lần đăng nhập mới nhất từ \n" .
@@ -107,7 +107,6 @@ class AuthController extends BaseController
                 try {
                     CartModel::addCartItem((int)$customer['id'], $pid, $qty, $price);
                 } catch (Exception $e) {
-                    
                 }
             }
             unset($_SESSION['guest_cart']);
@@ -118,44 +117,44 @@ class AuthController extends BaseController
     public function loginWithGoogle()
     {
         require_once __DIR__ . '/../login_with_google_helper.php';
-        
+
         $code = $_GET['code'] ?? null;
-        
+
         if (!$code) {
             $_SESSION['error'] = 'Đăng nhập Google thất bại. Vui lòng thử lại.';
             return $this->redirect('index.php?page=login');
         }
-        
+
         $accessToken = getGoogleAccessToken($code);
-        
+
         if (!$accessToken) {
             $_SESSION['error'] = 'Không thể xác thực với Google. Vui lòng thử lại.';
             return $this->redirect('index.php?page=login');
         }
-        
+
         $googleUser = getGoogleUserInfo($accessToken);
-        
+
         if (!$googleUser || empty($googleUser['email'])) {
             $_SESSION['error'] = 'Không thể lấy thông tin từ Google. Vui lòng thử lại.';
             return $this->redirect('index.php?page=login');
         }
-        
+
         $email = $googleUser['email'];
         $user = CustomerModel::findCustomerByEmail($email);
-        
+
         if (!$user) {
             $givenName = $googleUser['given_name'] ?? '';
             $familyName = $googleUser['family_name'] ?? '';
             $name = $googleUser['name'] ?? '';
-            
+
             $nameParts = explode(' ', trim($name));
             $ho = $nameParts[0] ?? '';
             $ten = array_pop($nameParts) ?? '';
             $tendem = implode(' ', array_slice($nameParts, 1));
-            
+
             $randomPassword = bin2hex(random_bytes(16));
             $hash = password_hash($randomPassword, PASSWORD_DEFAULT);
-            
+
             $userId = CustomerModel::createCustomer([
                 'password' => $hash,
                 'ho' => $ho ?: $familyName,
@@ -167,21 +166,21 @@ class AuthController extends BaseController
                 'sdt' => null,
                 'gioitinh' => null
             ]);
-            
+
             if (!$userId) {
                 $_SESSION['error'] = 'Không thể tạo tài khoản. Vui lòng thử lại.';
                 return $this->redirect('index.php?page=login');
             }
-            
+
             $user = CustomerModel::findCustomerByEmail($email);
         }
-        
+
         session_regenerate_id(true);
-        
+
         if (function_exists('generate_csrf_token')) {
             generate_csrf_token(true);
         }
-        
+
         $_SESSION['khachhang_account'] = [
             'id'        => $user['khachhang_id'],
             'ho'        => $user['ho'] ?? '',
@@ -199,15 +198,15 @@ class AuthController extends BaseController
             'login_time' => time(),
             'google_login' => true
         ];
-        
+
         global $customer;
         $customer = $_SESSION['khachhang_account'];
         $_SESSION['success'] = 'Chào mừng ' . htmlspecialchars($_SESSION['khachhang_account']['ho_ten']);
         include_once __DIR__ . "/../models/notification.php";
         include_once __DIR__ . "/../helpers.php";
-        
+
         $agent = getLoginAgent();
-        
+
         NotificationModel::createNotification(
             $customer['id'],
             'Đăng nhập qua Google',
@@ -231,7 +230,7 @@ class AuthController extends BaseController
             }
             unset($_SESSION['guest_cart']);
         }
-        
+
         return $this->redirect('index.php');
     }
     public function register()
@@ -257,14 +256,14 @@ class AuthController extends BaseController
             return $this->redirect('index.php?page=register');
         }
 
-        if (CustomerModel:: findCustomerByEmail($email)) {
+        if (CustomerModel::findCustomerByEmail($email)) {
             $_SESSION['error'] = 'Email đã được sử dụng.';
             return $this->redirect('index.php?page=register');
         }
 
         $hash = password_hash($password, PASSWORD_DEFAULT);
 
-        $id = CustomerModel:: createCustomer([
+        $id = CustomerModel::createCustomer([
             'password' => $hash,
             'ho' => $ho,
             'tendem' => $tendem,
@@ -309,14 +308,13 @@ class AuthController extends BaseController
 
     public function redirect(string $to)
     {
-        // try{
-        //     header("Location: $to");
-        // }
-        // catch(Exception $e){
-        //     echo "<script>window.location.href='$to';</script>";
-        
-        // }
-        // exit;
+        if (!headers_sent()) {
+            header("Location: $to");
+            exit;
+        }
+
+        echo "<script>window.location.href='$to';</script>";
+        exit;
     }
 }
 
