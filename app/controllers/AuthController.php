@@ -309,8 +309,14 @@ class AuthController extends BaseController
 
     public function redirect(string $to)
     {
-        header("Location: $to");
-        exit;
+        try{
+             header("Location: $to");
+            exit;
+        }
+        catch(Exception $e){
+            echo "<script>window.location.href='$to';</script>";
+            exit;
+        }
     }
 }
 
