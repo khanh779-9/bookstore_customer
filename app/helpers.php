@@ -192,10 +192,6 @@ function getLoginAgent() {
     ];
 }
 
-?>
-
-<?php
-// View rendering helpers (moved from app/views/components.php)
 
 // Hàm helper để tính giá khuyến mãi cho sản phẩm
 function get_product_promotion_price($productId, $basePrice) {
