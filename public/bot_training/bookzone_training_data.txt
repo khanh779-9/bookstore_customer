@@ -1,0 +1,154 @@
+=========================================
+BOOKZONE - DỮ LIỆU TRAINING MIRA AI
+=========================================
+
+1. THÔNG TIN NHÀ SÁCH
+=========================================
+Tên: BookZone - Khai Nguồn Hứng Sáng Tạo
+Địa chỉ: 180 Cao Lỗ, Quận 8, TP.HCM
+Hotline: 0239 482 958
+Email: qkhanh12.duration060@passinbox.com
+Giờ mở cửa: Thứ 2-CN: 8:00-22:00
+
+Giá trị cốt lõi:
+- Chất lượng: Sản phẩm uy tín
+- Sáng tạo: Độc đáo, khơi nguồn cảm hứng
+- Tận tâm: Hỗ trợ nhiệt tình
+
+2. CÁC TRANG CHÍNH
+=========================================
+Trang chủ: index.php hoặc index.php?page=home
+Sản phẩm: index.php?page=products
+Chi tiết SP: index.php?page=productview&id=[ID]
+Giỏ hàng: index.php?page=cart
+Thanh toán: index.php?page=checkout
+Đơn hàng: index.php?page=orders
+Tài khoản: index.php?page=account
+Đăng nhập: index.php?page=login
+Đăng ký: index.php?page=register
+Liên hệ: index.php?page=contact
+Về chúng tôi: index.php?page=about
+
+3. TÌM KIẾM & LỌC SẢN PHẨM
+=========================================
+Tìm kiếm: ?page=products&search=[từ khóa]
+Lọc danh mục: ?page=products&danhmucSP_id=[ID]
+  - Sách (ID: 1)
+  - Văn phòng phẩm (ID: 2)
+  - Quà tặng (ID: 3)
+
+Lọc giá: ?page=products&min=[giá min]&max=[giá max]
+Sắp xếp: ?page=products&sort_by=[price_asc|price_desc|newest]
+
+4. DANH MỤC SẢN PHẨM
+=========================================
+SÁCH:
+- Sách giáo khoa (Toán, Lý, Hóa, Văn...)
+- Ngoại ngữ (Từ điển, Grammar...)
+- Văn học (Đắc Nhân Tâm, Nhà Giả Kim...)
+- Kinh tế (Tư Duy Ngược, Think and Grow Rich...)
+- Tin học (Python, Clean Code...)
+
+VĂN PHÒNG PHẨM:
+- Bút viết (bút bi, bút chì...)
+- Vở, tập
+- Dụng cụ học tập
+
+QUÀ TẶNG:
+- Bookmark, thiệp, lịch
+
+5. SẢN PHẨM MẪU
+=========================================
+Sách Toán 10 (ID: 1) - 45,000đ
+Sách Vật Lý 10 (ID: 4) - 42,000đ
+Oxford Dictionary (ID: 9) - 250,000đ
+Đắc Nhân Tâm (ID: 11) - 68,000đ
+Python Crash Course (ID: 15) - 300,000đ
+Bút Bi Thiên Long (ID: 17) - 3,000đ
+Vở 200 trang (ID: 18) - 15,000đ
+
+6. QUY TRÌNH MUA HÀNG
+=========================================
+1. Tìm sản phẩm → Xem chi tiết
+2. Thêm vào giỏ hàng
+3. Vào giỏ hàng → Thanh toán
+4. Đăng nhập (nếu chưa có)
+5. Chọn địa chỉ + phương thức thanh toán
+6. Xác nhận đơn hàng
+7. Theo dõi đơn tại "Đơn hàng của tôi"
+
+7. CHÍNH SÁCH
+=========================================
+ĐỔI TRẢ:
+- Thời gian: 7 ngày
+- Điều kiện: Còn nguyên tem, chưa dùng, có hóa đơn
+- Không áp dụng: Sản phẩm khuyến mãi
+- Liên hệ: 0239 482 958
+
+BẢO HÀNH:
+- VPP điện tử: 3-12 tháng
+- Sách: Chỉ đổi lỗi in ấn
+
+VẬN CHUYỂN:
+- Nội thành HCM: 15,000đ (1-2 ngày)
+- Tỉnh lân cận: 25,000đ (2-3 ngày)
+- Tỉnh xa: 35,000đ (3-5 ngày)
+- MIỄN PHÍ đơn ≥ 500,000đ
+- Đối tác: GHN, GHTK, Viettel Post, J&T
+
+THANH TOÁN:
+- COD (thanh toán khi nhận)
+- Chuyển khoản: Vietcombank, Techcombank, BIDV
+- Ví điện tử: MoMo, ZaloPay, VNPay
+- Thẻ tín dụng/ghi nợ
+
+8. FAQ
+=========================================
+Q: Làm sao đặt hàng?
+A: Chọn SP → Giỏ hàng → Thanh toán → Xác nhận
+
+Q: Phương thức thanh toán?
+A: COD, chuyển khoản, MoMo/ZaloPay, thẻ
+
+Q: Bao lâu nhận hàng?
+A: Nội thành 1-2 ngày, tỉnh xa 3-5 ngày
+
+Q: Miễn phí ship?
+A: Có, đơn từ 500,000đ
+
+Q: Đổi trả được không?
+A: Được, trong 7 ngày nếu còn nguyên tem
+
+Q: Theo dõi đơn hàng?
+A: Đăng nhập → Đơn hàng của tôi
+
+Q: Hủy đơn?
+A: Được khi đơn ở trạng thái "Chờ xác nhận"
+
+Q: Liên hệ hỗ trợ?
+A: Gọi 0239 482 958 hoặc email qkhanh12.duration060@passinbox.com
+
+9. CHỨC NĂNG TÀI KHOẢN
+=========================================
+Đăng ký: index.php?page=register
+Đăng nhập: index.php?page=login (hoặc Google)
+Quên MK: index.php?page=forgot_resetPass
+Hồ sơ: index.php?page=account
+Đổi MK: POST index.php?page=change_password
+Đơn hàng: index.php?page=orders
+Yêu thích: POST index.php?page=wishlist_toggle
+Đánh giá SP: POST index.php?page=submit_review
+
+10. KEYWORDS CHATBOT
+=========================================
+Sản phẩm: sách, sgk, văn phòng phẩm, bút, vở, từ điển
+Chức năng: đặt hàng, thanh toán, giỏ hàng, ship
+Chính sách: đổi trả, bảo hành, vận chuyển
+Support: liên hệ, hotline, email
+Q&A: làm sao, bao lâu, có được không, giá bao nhiêu
+
+=========================================
+File: BookZone Training Data v1.0
+Date: 2025-12-23
+Purpose: Mira AI Chatbot Training
+=========================================

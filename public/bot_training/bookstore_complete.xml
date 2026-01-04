@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+  <!-- ============================================ -->
+  <!-- STORE INFORMATION / THÔNG TIN CỬA HÀNG -->
+  <!-- ============================================ -->
+  <store_info>
+    <name>BookZone</name>
+    <tagline>Khai Nguồn Hứng Sáng Tạo</tagline>
+    <full_description>Chào mừng đến với BookZone, nơi mỗi sản phẩm không chỉ là một công cụ mà còn là nguồn cảm hứng cho sự sáng tạo và học hỏi. Chúng tôi tin rằng những vật dụng nhỏ bé trên bàn làm việc có sức mạnh to lớn để biến ý tưởng thành hiện thực. Vì vậy, chúng tôi ra đời với sứ mệnh mang đến những sản phẩm văn phòng phẩm chất lượng, đa dạng và thân thiện với môi trường, phục vụ cho mọi nhu cầu từ học tập, công việc đến đam mê nghệ thuật.</full_description>
+    <mission>Mang đến những sản phẩm văn phòng phẩm chất lượng, đa dạng và thân thiện với môi trường</mission>
+    
+    <contact>
+      <address>Trường Đại Học Công Nghệ Sài Gòn, 180 Cao Lỗ, Quận 8, TP.HCM</address>
+      <phone>+84 28 3640 5555</phone>
+      <email>contact@bookzone.vn</email>
+      <website>https://bookzone.vn</website>
+      <map_url>https://www.google.com/maps?q=Trường+Đại+Học+Công+Nghệ+Sài+Gòn+180+Cao+Lỗ+Quận+8+TP.HCM</map_url>
+    </contact>
+
+    <core_values>
+      <value>
+        <title>Chất lượng</title>
+        <description>Tất cả sản phẩm BookZone đều được kiểm tra chất lượng kỹ lưỡng trước khi giao tay khách hàng</description>
+      </value>
+      <value>
+        <title>Đa dạng</title>
+        <description>BookZone cung cấp hàng ngàn sản phẩm từ các thương hiệu nổi tiếng trên thế giới</description>
+      </value>
+      <value>
+        <title>Tân thiện</title>
+        <description>Tất cả sản phẩm của BookZone đều thân thiện với môi trường và có giấy chứng nhận ECO</description>
+      </value>
+      <value>
+        <title>Giá cạnh tranh</title>
+        <description>BookZone cam kết giá bán luôn là tốt nhất tại thị trường</description>
+      </value>
+      <value>
+        <title>Dịch vụ tận tâm</title>
+        <description>Đội ngũ nhân viên BookZone luôn sẵn sàng hỗ trợ khách hàng 24/7</description>
+      </value>
+    </core_values>
+
+    <history>
+      <founded>2020</founded>
+      <founder>Nguyễn Công Nghiệp</founder>
+      <story>BookZone được thành lập vào năm 2020 với mục tiêu cung cấp sách và văn phòng phẩm chất lượng cho cộng đồng. Từ một cửa hàng nhỏ, BookZone đã phát triển thành một trong những nhà bán lẻ sách lớn nhất tại TP.HCM với hàng chục ngàn khách hàng hài lòng.</story>
+    </history>
+  </store_info>
+
+  <!-- ============================================ -->
+  <!-- CATEGORIES / DANH MỤC SẢN PHẨM -->
+  <!-- ============================================ -->
+  <categories>
+    <main_category>
+      <id>1</id>
+      <name>Sách</name>
+      <slug>books</slug>
+      <description>Tất cả các thể loại sách: giáo khoa, tham khảo, văn học, thiếu nhi, kinh tế, kỹ thuật, ngoại ngữ, pháp luật và nhiều thể loại khác</description>
+      <icon>📚</icon>
+      <sub_categories>
+        <sub_category>
+          <id>1.1</id>
+          <name>Sách Giáo Khoa</name>
+          <description>Sách giáo khoa các lớp từ cấp 1 đến cấp 3 theo chương trình học mới nhất</description>
+        </sub_category>
+        <sub_category>
+          <id>1.2</id>
+          <name>Sách Tham Khảo</name>
+          <description>Sách tham khảo giúp học sinh nâng cao kiến thức các môn học</description>
+        </sub_category>
+        <sub_category>
+          <id>1.3</id>
+          <name>Sách Văn Học</name>
+          <description>Những cuốn tiểu thuyết, truyện ngắn, thơ ca hay nhất mọi thời đại</description>
+        </sub_category>
+        <sub_category>
+          <id>1.4</id>
+          <name>Sách Thiếu Nhi</name>
+          <description>Sách truyện tranh, các cuốn sách thú vị cho trẻ em</description>
+        </sub_category>
+        <sub_category>
+          <id>1.5</id>
+          <name>Sách Kinh Tế</name>
+          <description>Sách về kinh tế, kinh doanh, tài chính cho nhà đầu tư</description>
+        </sub_category>
+        <sub_category>
+          <id>1.6</id>
+          <name>Sách Kỹ Thuật</name>
+          <description>Sách hướng dẫn về lập trình, máy tính, công nghệ thông tin</description>
+        </sub_category>
+        <sub_category>
+          <id>1.7</id>
+          <name>Từ Điển</name>
+          <description>Từ điển Anh Việt, Nhật Việt, Trung Việt và các loại từ điển chuyên ngành</description>
+        </sub_category>
+        <sub_category>
+          <id>1.8</id>
+          <name>Sách Phát Triển Kỹ Năng</name>
+          <description>Sách giúp phát triển kỹ năng sống, kỹ năng mềm, lãnh đạo</description>
+        </sub_category>
+      </sub_categories>
+    </main_category>
+
+    <main_category>
+      <id>2</id>
+      <name>Văn Phòng Phẩm</name>
+      <slug>office-supplies</slug>
+      <description>Bút, vở, băng keo, hồ, kéo, dụng cụ học tập, giấy in, máy tính và các dụng cụ văn phòng khác</description>
+      <icon>✏️</icon>
+      <sub_categories>
+        <sub_category>
+          <id>2.1</id>
+          <name>Bút Viết</name>
+          <description>Bút bi, bút gel, bút chì các loại màu sắc</description>
+        </sub_category>
+        <sub_category>
+          <id>2.2</id>
+          <name>Vở &amp; Sổ Tay</name>
+          <description>Vở các cỡ khác nhau, sổ tay, lò xo, tập giấy</description>
+        </sub_category>
+        <sub_category>
+          <id>2.3</id>
+          <name>Dụng Cụ Học Tập</name>
+          <description>Thước kẻ, compa, tam giác, êke, phấn, bảng đen</description>
+        </sub_category>
+        <sub_category>
+          <id>2.4</id>
+          <name>Dán &amp; Keo</name>
+          <description>Băng dính, keo dán, keo nước các loại</description>
+        </sub_category>
+        <sub_category>
+          <id>2.5</id>
+          <name>Giấy In</name>
+          <description>Giấy A4, giấy màu, giấy photo chất lượng cao</description>
+        </sub_category>
+      </sub_categories>
+    </main_category>
+  </categories>
+
+  <!-- ============================================ -->
+  <!-- POLICIES / CHÍNH SÁCH -->
+  <!-- ============================================ -->
+  <policies>
+    <privacy_policy>
+      <title>Chính sách bảo mật</title>
+      <last_updated>2025-12-23</last_updated>
+      <summary>BookZone cam kết bảo vệ quyền riêng tư của bạn. Chính sách bảo mật này giải thích cách chúng tôi thu thập, sử dụng, chia sẻ và bảo vệ thông tin cá nhân của bạn.</summary>
+      <content>
+        <section>
+          <heading>1. Thông tin chúng tôi thu thập</heading>
+          <text>Chúng tôi thu thập thông tin bạn cung cấp trực tiếp (tên, email, số điện thoại, địa chỉ) và thông tin được thu thập tự động (IP, cookies, lịch sử duyệt).</text>
+        </section>
+        <section>
+          <heading>2. Cách chúng tôi sử dụng thông tin</heading>
+          <text>Thông tin được sử dụng để xử lý đơn hàng, liên hệ khách hàng, cải thiện dịch vụ và gửi thông tin khuyến mãi.</text>
+        </section>
+        <section>
+          <heading>3. Bảo vệ dữ liệu</heading>
+          <text>Chúng tôi sử dụng mã hóa SSL/TLS, tường lửa, và các biện pháp bảo mật hàng đầu để bảo vệ dữ liệu của bạn.</text>
+        </section>
+      </content>
+      <highlights>
+        <highlight>Không chia sẻ thông tin cá nhân với bên thứ ba</highlight>
+        <highlight>Mã hóa dữ liệu giao dịch với SSL 256-bit</highlight>
+        <highlight>Sao lưu dữ liệu hàng ngày</highlight>
+        <highlight>Tuân thủ GDPR và các quy định bảo vệ dữ liệu quốc tế</highlight>
+      </highlights>
+    </privacy_policy>
+
+    <return_policy>
+      <title>Chính sách đổi trả</title>
+      <last_updated>2025-12-23</last_updated>
+      <summary>Tự tin mua sắm với quy trình đổi trả rõ ràng, linh hoạt và ưu tiên quyền lợi khách hàng.</summary>
+      <content>
+        <section>
+          <heading>Điều kiện đổi trả</heading>
+          <text>Khách hàng có thể đổi trả trong vòng 30 ngày từ ngày mua. Sản phẩm phải còn nguyên vẹn, có tem, không bị hư hỏng do người dùng.</text>
+        </section>
+        <section>
+          <heading>Quy trình đổi trả</heading>
+          <text>1. Liên hệ hotline hoặc ghé cửa hàng để thông báo. 2. Chuẩn bị sản phẩm, hoá đơn, tem nhãn. 3. Tiếp nhận kiểm tra sản phẩm. 4. Hoàn trả hoặc đổi sản phẩm.</text>
+        </section>
+      </content>
+      <highlights>
+        <highlight>Đổi trả trong vòng 30 ngày từ ngày mua</highlight>
+        <highlight>Không tính phí đổi trả cho sản phẩm lỗi</highlight>
+        <highlight>Miễn phí vận chuyển lấy hàng đổi trả</highlight>
+        <highlight>Hoàn tiền toàn bộ hoặc đổi sản phẩm khác</highlight>
+      </highlights>
+      <refund_methods>
+        <method>Hoàn tiền về tài khoản ngân hàng trong 3-5 ngày làm việc</method>
+        <method>Hoàn tiền mặt tại cửa hàng: Ngay lập tức</method>
+        <method>Đổi voucher credit để mua hàng tiếp</method>
+      </refund_methods>
+    </return_policy>
+
+    <warranty_policy>
+      <title>Chính sách bảo hành</title>
+      <last_updated>2025-12-23</last_updated>
+      <summary>Tất cả sản phẩm BookZone đều được bảo hành chuyên nghiệp với thời gian phù hợp loại sản phẩm.</summary>
+      <content>
+        <section>
+          <heading>Thời gian bảo hành</heading>
+          <text>Sách: 6 tháng. Vở, vật dụng: 3 tháng. Dụng cụ điện tử: 12 tháng.</text>
+        </section>
+        <section>
+          <heading>Những gì được bảo hành</heading>
+          <text>Lỗi do nhà sản xuất, hỏng hóc do vật liệu kém chất lượng, các lỗi cơ khí và chức năng.</text>
+        </section>
+        <section>
+          <heading>Những gì KHÔNG được bảo hành</heading>
+          <text>Hư hỏng do người dùng gây ra, sử dụng sai cách, va đập, thấm nước, hóa chất, lão hóa tự nhiên.</text>
+        </section>
+      </content>
+      <highlights>
+        <highlight>Bảo hành lên đến 12 tháng cho một số sản phẩm</highlight>
+        <highlight>Hỗ trợ bảo hành tại cửa hàng và quận huyện</highlight>
+        <highlight>Miễn phí sửa chữa cho lỗi do nhà sản xuất</highlight>
+        <highlight>Sửa chữa trong 7 ngày hoặc thay sản phẩm mới</highlight>
+      </highlights>
+      <important_notes>
+        <note>Bảo hành không áp dụng cho hư hỏng do người dùng gây ra</note>
+        <note>Thời gian bảo hành được tính từ ngày mua hàng ghi trên hóa đơn</note>
+        <note>Phải giữ nguyên tem bảo hành và hoá đơn mua hàng</note>
+      </important_notes>
+    </warranty_policy>
+
+    <shipping_policy>
+      <title>Vận chuyển &amp; Giao hàng</title>
+      <last_updated>2025-12-23</last_updated>
+      <summary>Hợp tác với các đối tác vận chuyển uy tín, đảm bảo sản phẩm đến tay bạn nhanh chóng và an toàn.</summary>
+      <content>
+        <section>
+          <heading>Khu vực giao hàng</heading>
+          <text>BookZone giao hàng tại TP.HCM, Bình Dương, Đồng Nai, Long An, Tiền Giang và các tỉnh thành khác trên toàn quốc.</text>
+        </section>
+        <section>
+          <heading>Thời gian giao hàng</heading>
+          <text>TP.HCM: 24 giờ. Các tỉnh lân cận: 2-3 ngày. Các tỉnh khác: 3-5 ngày.</text>
+        </section>
+      </content>
+      <highlights>
+        <highlight>Giao hàng toàn thành phố TP.HCM trong 24 giờ</highlight>
+        <highlight>Giao hàng các tỉnh lân cận trong 2-3 ngày</highlight>
+        <highlight>Theo dõi đơn hàng realtime bằng app hoặc website</highlight>
+        <highlight>Đóng gói an toàn, tránh va đập</highlight>
+      </highlights>
+      <shipping_methods>
+        <method>
+          <name>GHN - Giao Hàng Nhanh</name>
+          <description>Giao hàng nhanh chóng, đáng tin cậy trong TP.HCM và các tỉnh</description>
+        </method>
+        <method>
+          <name>Grab Express</name>
+          <description>Giao hàng siêu tốc cùng ngày tại TP.HCM</description>
+        </method>
+        <method>
+          <name>VNPost</name>
+          <description>Giao hàng kinh tế cho các tỉnh xa</description>
+        </method>
+        <method>
+          <name>Giao hàng tại cửa hàng</name>
+          <description>Mua hàng và nhận tại cửa hàng BookZone ngay</description>
+        </method>
+      </shipping_methods>
+      <shipping_fee_policy>
+        <policy>Miễn phí ship cho đơn hàng từ 200.000 VND trở lên tại TP.HCM</policy>
+        <policy>Miễn phí ship cho đơn hàng từ 300.000 VND trở lên tại các tỉnh</policy>
+        <policy>Có thể áp dụng các chương trình freeship đặc biệt trong các dịp khuyến mãi</policy>
+        <policy>Chi phí ship cho đơn hàng nhỏ: 15.000 - 50.000 VND tuỳ khu vực</policy>
+      </shipping_fee_policy>
+      <important_notes>
+        <note>Miễn phí ship cho đơn hàng từ 200.000 VND trở lên</note>
+        <note>Thời gian giao hàng có thể thay đổi trong các dịp lễ, Tết hoặc thời tiết xấu</note>
+        <note>Khách hàng có thể chọn giờ giao hàng phù hợp</note>
+        <note>Nếu không thể nhận hàng, vui lòng liên hệ ngay để sắp xếp lại</note>
+      </important_notes>
+    </shipping_policy>
+
+    <payment_policy>
+      <title>Phương thức thanh toán</title>
+      <last_updated>2025-12-23</last_updated>
+      <summary>BookZone hỗ trợ nhiều phương thức thanh toán an toàn, nhanh chóng và tiện lợi.</summary>
+      <content>
+        <section>
+          <heading>Các phương thức thanh toán</heading>
+          <text>BookZone chấp nhận thanh toán tiền mặt, chuyển khoản, thẻ tín dụng, ví điện tử và các phương thức thanh toán trực tuyến khác.</text>
+        </section>
+      </content>
+      <methods>
+        <method>
+          <id>1</id>
+          <name>Thanh toán tiền mặt khi nhận hàng (COD)</name>
+          <code>cash_on_delivery</code>
+          <description>Thanh toán trực tiếp cho nhân viên giao hàng, không có phí phụ thêm</description>
+          <fee>Miễn phí</fee>
+          <processing_time>Tức thì</processing_time>
+        </method>
+        <method>
+          <id>2</id>
+          <name>Chuyển khoản ngân hàng</name>
+          <code>bank_transfer</code>
+          <description>Chuyển khoản vào tài khoản ngân hàng của BookZone trước khi giao hàng</description>
+          <accounts>
+            <account>
+              <bank_name>Vietcombank</bank_name>
+              <account_number>1234567890</account_number>
+              <account_name>CÔNG TY CỔ PHẦN BOOKZONE</account_name>
+            </account>
+            <account>
+              <bank_name>Techcombank</bank_name>
+              <account_number>0987654321</account_number>
+              <account_name>CÔNG TY CỔ PHẦN BOOKZONE</account_name>
+            </account>
+          </accounts>
+          <fee>Miễn phí</fee>
+          <processing_time>1-2 giờ</processing_time>
+        </method>
+        <method>
+          <id>3</id>
+          <name>Thẻ tín dụng / Thẻ ghi nợ</name>
+          <code>card_payment</code>
+          <description>Visa, MasterCard, JCB, domestic cards</description>
+          <supported_cards>Visa, MasterCard, JCB, Aeon</supported_cards>
+          <fee>Miễn phí</fee>
+          <processing_time>Tức thì</processing_time>
+        </method>
+        <method>
+          <id>4</id>
+          <name>Ví điện tử</name>
+          <code>ewallet</code>
+          <description>Momo, Zalopay, VNPay, Sky Pay</description>
+          <supported_wallets>Momo, Zalopay, VNPay, Sky Pay</supported_wallets>
+          <fee>Miễn phí</fee>
+          <processing_time>Tức thì</processing_time>
+        </method>
+        <method>
+          <id>5</id>
+          <name>Trả góp</name>
+          <code>installment</code>
+          <description>Trả góp 0% qua các ngân hàng đối tác cho đơn hàng từ 3 triệu đồng</description>
+          <min_amount>3000000</min_amount>
+          <installment_periods>3, 6, 12 tháng</installment_periods>
+          <fee>Miễn phí</fee>
+          <processing_time>1-2 giờ</processing_time>
+        </method>
+      </methods>
+    </payment_policy>
+  </policies>
+
+  <!-- ============================================ -->
+  <!-- PARTNERS / ĐỐI TÁC -->
+  <!-- ============================================ -->
+  <partners>
+    <publisher_partners>
+      <partner>
+        <name>ABC Books</name>
+        <email>sales@abcbooks.vn</email>
+        <phone>+84 28 1234 5678</phone>
+        <address>123 Nguyễn Huệ, Quận 1, TP.HCM</address>
+        <products_count>15</products_count>
+        <type>publisher</type>
+      </partner>
+      <partner>
+        <name>XYZ Publishing</name>
+        <email>contact@xyzbooks.vn</email>
+        <phone>+84 28 9876 5432</phone>
+        <address>456 Bùi Viện, Quận 1, TP.HCM</address>
+        <products_count>12</products_count>
+        <type>publisher</type>
+      </partner>
+      <partner>
+        <name>EduAB Books</name>
+        <email>contact@eduab.vn</email>
+        <phone>+84 28 5555 6666</phone>
+        <address>789 Lê Lợi, Quận 1, TP.HCM</address>
+        <products_count>8</products_count>
+        <type>publisher</type>
+      </partner>
+    </publisher_partners>
+
+    <supplier_partners>
+      <partner>
+        <name>LMN Distribution</name>
+        <email>info@lmn-distrib.vn</email>
+        <phone>+84 28 3333 4444</phone>
+        <address>321 Hoàng Văn Thụ, Quận Tân Bình, TP.HCM</address>
+        <products_count>18</products_count>
+        <specialty>Văn phòng phẩm, dụng cụ học tập</specialty>
+        <type>supplier</type>
+      </partner>
+      <partner>
+        <name>FastPrint Distribution</name>
+        <email>print@fastprint.vn</email>
+        <phone>+84 28 2222 3333</phone>
+        <address>654 Cách Mạng Tháng Tám, Quận 3, TP.HCM</address>
+        <products_count>10</products_count>
+        <specialty>In ấn, giấy in</specialty>
+        <type>supplier</type>
+      </partner>
+      <partner>
+        <name>MinHan Distribution</name>
+        <email>minhan@dist.vn</email>
+        <phone>+84 28 7777 8888</phone>
+        <address>987 Ngã Tư Sở, Quận 5, TP.HCM</address>
+        <products_count>7</products_count>
+        <specialty>Sách chuyên ngành, tài liệu kỹ thuật</specialty>
+        <type>supplier</type>
+      </partner>
+      <partner>
+        <name>Quảng Ninh VPP</name>
+        <email>vpp@quangninh.vn</email>
+        <phone>+84 33 8888 9999</phone>
+        <address>Hạ Long, Quảng Ninh</address>
+        <products_count>5</products_count>
+        <specialty>Văn phòng phẩm, giấy A4</specialty>
+        <type>supplier</type>
+      </partner>
+    </supplier_partners>
+
+    <shipping_partners>
+      <partner>
+        <name>GHN - Giao Hàng Nhanh</name>
+        <website>https://ghn.vn</website>
+        <phone>1900 6179</phone>
+        <coverage>Toàn quốc</coverage>
+        <delivery_time_hcm>24 giờ</delivery_time_hcm>
+        <delivery_time_provinces>2-5 ngày</delivery_time_provinces>
+      </partner>
+      <partner>
+        <name>Grab Express</name>
+        <website>https://grab.com</website>
+        <app_download>Ứng dụng Grab</app_download>
+        <coverage>TP.HCM và khu vực lân cận</coverage>
+        <delivery_time>1-2 giờ</delivery_time>
+        <specialty>Giao hàng cùng ngày</specialty>
+      </partner>
+      <partner>
+        <name>VNPost</name>
+        <website>https://vnpost.vn</website>
+        <phone>1800 1113</phone>
+        <coverage>Toàn quốc</coverage>
+        <delivery_time>3-7 ngày</delivery_time>
+        <specialty>Giá rẻ, phủ sóng toàn quốc</specialty>
+      </partner>
+    </shipping_partners>
+
+    <payment_gateway_partners>
+      <partner>
+        <name>VNPay</name>
+        <website>https://vnpay.vn</website>
+        <supported_methods>Thẻ, ví điện tử, internet banking</supported_methods>
+      </partner>
+      <partner>
+        <name>Zalopay</name>
+        <website>https://zalopay.vn</website>
+        <supported_methods>Zalopay, thẻ, internet banking</supported_methods>
+      </partner>
+      <partner>
+        <name>Momo</name>
+        <website>https://momo.vn</website>
+        <supported_methods>Momo wallet, thẻ</supported_methods>
+      </partner>
+    </payment_gateway_partners>
+  </partners>
+
+  <!-- ============================================ -->
+  <!-- FAQs / CÂU HỎI THƯỜNG GẶP -->
+  <!-- ============================================ -->
+  <faqs>
+    <faq>
+      <question>BookZone giao hàng ở đâu?</question>
+      <answer>BookZone giao hàng toàn thành phố TP.HCM (24 giờ), các tỉnh lân cận (2-3 ngày), và các tỉnh thành khác (3-5 ngày). Hiện tại chúng tôi phục vụ 63 tỉnh thành trên toàn quốc.</answer>
+      <category>shipping</category>
+    </faq>
+
+    <faq>
+      <question>Có miễn phí ship không?</question>
+      <answer>Có! Miễn phí ship cho đơn hàng từ 200.000 VND trở lên tại TP.HCM, từ 300.000 VND tại các tỉnh. Áp dụng thêm các chương trình freeship đặc biệt trong các dịp khuyến mãi.</answer>
+      <category>shipping</category>
+    </faq>
+
+    <faq>
+      <question>Làm sao để đổi trả hàng?</question>
+      <answer>Bạn có thể đổi trả trong vòng 30 ngày từ ngày mua. Liên hệ hotline +84 28 3640 5555 hoặc ghé cửa hàng với sản phẩm, hoá đơn và tem nhãn. BookZone sẽ kiểm tra và hoàn trả/đổi miễn phí cho bạn.</answer>
+      <category>return</category>
+    </faq>
+
+    <faq>
+      <question>Có bảo hành không?</question>
+      <answer>Có! Tất cả sản phẩm được bảo hành từ 3 đến 12 tháng tùy theo loại sản phẩm. Miễn phí sửa chữa cho lỗi do nhà sản xuất. Bảo hành được tính từ ngày mua trên hoá đơn.</answer>
+      <category>warranty</category>
+    </faq>
+
+    <faq>
+      <question>BookZone chấp nhận những phương thức thanh toán nào?</question>
+      <answer>BookZone chấp nhận thanh toán tiền mặt (COD), chuyển khoản ngân hàng, thẻ tín dụng/ghi nợ (Visa, MasterCard, JCB), ví điện tử (Momo, Zalopay, VNPay) và trả góp 0% qua ngân hàng đối tác.</answer>
+      <category>payment</category>
+    </faq>
+
+    <faq>
+      <question>Tôi có thể theo dõi đơn hàng không?</question>
+      <answer>Có! Sau khi đơn hàng được xác nhận, bạn sẽ nhận mã đơn hàng. Có thể theo dõi trực tiếp trên website BookZone, ứng dụng di động hoặc qua hotline 1900 6179 (GHN).</answer>
+      <category>shipping</category>
+    </faq>
+
+    <faq>
+      <question>Giá sách tại BookZone có rẻ nhất không?</question>
+      <answer>BookZone cam kết giá bán luôn là tốt nhất trên thị trường. Nếu bạn tìm thấy giá rẻ hơn nơi khác, hãy liên hệ để chúng tôi điều chỉnh giá cho bạn.</answer>
+      <category>pricing</category>
+    </faq>
+
+    <faq>
+      <question>Có chương trình khuyến mãi hoặc discount nào không?</question>
+      <answer>BookZone thường xuyên có các chương trình khuyến mãi, giảm giá, và free ship vào các dịp lễ, Tết, sinh nhật cửa hàng. Đăng ký newsletter hoặc theo dõi fanpage để cập nhật tin khuyến mãi mới nhất.</answer>
+      <category>promotion</category>
+    </faq>
+
+    <faq>
+      <question>BookZone có cửa hàng vật lý không?</question>
+      <answer>Có! BookZone có cửa hàng tại 180 Cao Lỗ, Quận 8, TP.HCM. Bạn có thể ghé thăm để xem sản phẩm, mua hàng, và nhận hỗ trợ trực tiếp từ nhân viên chuyên biệt.</answer>
+      <category>store</category>
+    </faq>
+
+    <faq>
+      <question>Làm sao để liên hệ với BookZone?</question>
+      <answer>Liên hệ BookZone qua các cách sau:
+- Hotline: +84 28 3640 5555
+- Email: contact@bookzone.vn
+- Website: https://bookzone.vn
+- Ghé cửa hàng: 180 Cao Lỗ, Quận 8, TP.HCM
+- Facebook: Tìm kiếm "BookZone Store"
+Chúng tôi luôn sẵn sàng hỗ trợ 24/7!</answer>
+      <category>contact</category>
+    </faq>
+  </faqs>
+
+  <!-- ============================================ -->
+  <!-- PRODUCTS / SẢN PHẨM -->
+  <!-- ============================================ -->
+  <products>
+    <metadata>
+      <total_products>51</total_products>
+      <total_books>47</total_books>
+      <total_stationery>4</total_stationery>
+      <generated_at>2025-12-23 09:20:47</generated_at>
+    </metadata>
+
+    <product>
+      <id>1</id>
+      <name>Sách Toán 10 - Bộ Cánh Diều</name>
+      <slug>sach-toan-10-bo-canh-dieu</slug>
+      <type>book</type>
+      <category>Sách Giáo Khoa</category>
+      <author>Bộ Giáo Dục &amp; Đào Tạo</author>
+      <publisher>ABC Books</publisher>
+      <description>Sách giáo khoa Toán 10 – Bộ Cánh Diều (Tập 1) là tài liệu chính thống được sử dụng rộng rãi tại nhiều trường THPT. Sách bám sát chương trình mới, cập nhật kiến thức hiện đại, giúp học sinh phát triển tư duy logic.</description>
+      <price>45000</price>
+      <currency>VND</currency>
+      <stock_quantity>118</stock_quantity>
+      <sold_quantity>50</sold_quantity>
+      <image>toan10_canhdieu_tap_1.jpg</image>
+      <image_url>https://bookzone.vn/assets/images/products/toan10_canhdieu_tap_1.jpg</image_url>
+      <rating>4.5</rating>
+      <review_count>23</review_count>
+      <stock_status>in_stock</stock_status>
+      <final_price>45000</final_price>
+      <sku>1</sku>
+    </product>
+
+    <product>
+      <id>2</id>
+      <name>Sách Ngữ văn 11 - Tập 1</name>
+      <slug>sach-ngu-van-11-tap-1</slug>
+      <type>book</type>
+      <category>Sách Giáo Khoa</category>
+      <author>Bộ Giáo Dục &amp; Đào Tạo</author>
+      <publisher>ABC Books</publisher>
+      <description>Ngữ văn 11 - Tập 1 là tài liệu giáo dục chất lượng cho học sinh lớp 11, cung cấp kiến thức toàn diện về văn học, ngữ pháp và kỹ năng đọc hiểu.</description>
+      <price>50000</price>
+      <sale_price>40000</sale_price>
+      <discount_percent>20</discount_percent>
+      <currency>VND</currency>
+      <stock_quantity>110</stock_quantity>
+      <sold_quantity>33</sold_quantity>
+      <image>Ngu-Van-11-Tap-1-600x853.jpg</image>
+      <image_url>https://bookzone.vn/assets/images/products/Ngu-Van-11-Tap-1-600x853.jpg</image_url>
+      <rating>4.3</rating>
+      <review_count>18</review_count>
+      <stock_status>in_stock</stock_status>
+      <final_price>40000</final_price>
+      <sku>2</sku>
+    </product>
+
+    <product>
+      <id>6</id>
+      <name>Sách Harry Potter và Hòn đá Phù triết gia - Tập 1</name>
+      <slug>sach-harry-potter-tap-1</slug>
+      <type>book</type>
+      <category>Sách Văn Học</category>
+      <author>J.K. Rowling</author>
+      <publisher>XYZ Publishing</publisher>
+      <description>Harry Potter và Hòn đá Phù Thủy - cuốn mở đầu nổi tiếng trong loạt truyện của J.K. Rowling. Câu chuyện về hành trình khám phá thân thế phù thủy của cậu bé Harry kết hợp với những bạn bè mới tại Trường Phép Thuật Hogwarts.</description>
+      <price>135000</price>
+      <sale_price>101250</sale_price>
+      <discount_percent>25</discount_percent>
+      <currency>VND</currency>
+      <stock_quantity>88</stock_quantity>
+      <sold_quantity>61</sold_quantity>
+      <image>Sach-Noi-Harry-Potter-Tap-1.jpg</image>
+      <image_url>https://bookzone.vn/assets/images/products/Sach-Noi-Harry-Potter-Tap-1-J-K-Rowling-audio-book-sachnoi.cc-4.jpg</image_url>
+      <rating>4.8</rating>
+      <review_count>156</review_count>
+      <stock_status>in_stock</stock_status>
+      <final_price>101250</final_price>
+      <sku>6</sku>
+    </product>
+
+    <product>
+      <id>7</id>
+      <name>Vở Hồng Hà 96 trang (10 quyển/lốc)</name>
+      <slug>vo-hong-ha-96-trang</slug>
+      <type>vpp</type>
+      <category>Vở &amp; Sổ Tay</category>
+      <brand>Hồng Hà</brand>
+      <publisher>LMN Distribution</publisher>
+      <description>Vở Hồng Hà 96 trang được làm từ giấy trắng sáng, mịn, không lem mực và cho nét chữ rõ ràng. Bìa vở thiết kế bền đẹp, cứng cáp, thích hợp sử dụng hằng ngày. Mỗi lốc gồm 10 quyển, tiết kiệm và tiện lợi.</description>
+      <price>82000</price>
+      <currency>VND</currency>
+      <stock_quantity>300</stock_quantity>
+      <sold_quantity>40</sold_quantity>
+      <image>vo_hong_ha_96t.jpg</image>
+      <image_url>https://bookzone.vn/assets/images/products/vo_hong_ha_96t.jpg</image_url>
+      <rating>4.6</rating>
+      <review_count>45</review_count>
+      <stock_status>in_stock</stock_status>
+      <final_price>82000</final_price>
+      <sku>7</sku>
+    </product>
+
+    <product>
+      <id>21</id>
+      <name>Thước kẻ bằng nhôm 30cm</name>
+      <slug>thuoc-ke-bang-nhom-30cm</slug>
+      <type>vpp</type>
+      <category>Dụng Cụ Học Tập</category>
+      <brand>Aluminum</brand>
+      <publisher>LMN Distribution</publisher>
+      <description>Thước nhôm 30cm là dụng cụ đo đạc bền bỉ, phù hợp cho học sinh, sinh viên, dân văn phòng và kỹ thuật. Thân thước được làm từ hợp kim nhôm cứng cáp, chống cong vênh. Vạch chia khắc laser sắc nét, không phai theo thời gian.</description>
+      <price>15000</price>
+      <currency>VND</currency>
+      <stock_quantity>26</stock_quantity>
+      <sold_quantity>44</sold_quantity>
+      <image>thuoc_nhom_30cm.jpg</image>
+      <image_url>https://bookzone.vn/assets/images/products/thuoc_nhom_30cm.jpg</image_url>
+      <rating>4.4</rating>
+      <review_count>32</review_count>
+      <stock_status>in_stock</stock_status>
+      <final_price>15000</final_price>
+      <sku>21</sku>
+    </product>
+
+    <product>
+      <id>28</id>
+      <name>Hộp tập giấy A4 - 400 tờ</name>
+      <slug>hop-tap-giay-a4-400-to</slug>
+      <type>vpp</type>
+      <category>Giấy In</category>
+      <brand>Paper</brand>
+      <publisher>Quảng Ninh VPP</publisher>
+      <description>Hộp tập giấy A4 – 400 tờ được sản xuất từ giấy chất lượng cao, bề mặt mịn, trắng sáng và viết rất êm tay. Giấy định lượng vừa phải, không lem mực, không thấm ngược. Phù hợp cho viết tay, học tập, làm bài, ghi chép hoặc in tài liệu.</description>
+      <price>100000</price>
+      <currency>VND</currency>
+      <stock_quantity>498</stock_quantity>
+      <sold_quantity>2</sold_quantity>
+      <image>tap-giay-a4-400-to.jpg</image>
+      <image_url>https://bookzone.vn/assets/images/products/tap-giay-a4-400-to.jpg</image_url>
+      <rating>4.5</rating>
+      <review_count>28</review_count>
+      <stock_status>in_stock</stock_status>
+      <final_price>100000</final_price>
+      <sku>28</sku>
+    </product>
+
+    <product>
+      <id>3</id>
+      <name>Sách Tiếng Anh 12 - Sách học sinh</name>
+      <slug>sach-tieng-anh-12-hoc-sinh</slug>
+      <type>book</type>
+      <category>Sách Giáo Khoa</category>
+      <author>Bộ Giáo Dục &amp; Đào Tạo</author>
+      <publisher>XYZ Publishing</publisher>
+      <description>Tiếng Anh 12 - Sách học sinh là tài liệu học tập tiếng Anh chuẩn cho học sinh lớp 12, cung cấp từ vựng, ngữ pháp, và kỹ năng nghe, nói, đọc, viết.</description>
+      <price>52000</price>
+      <currency>VND</currency>
+      <stock_quantity>74</stock_quantity>
+      <sold_quantity>24</sold_quantity>
+      <image>ta12-global.png</image>
+      <image_url>https://bookzone.vn/assets/images/products/ta12-global.png</image_url>
+      <rating>4.2</rating>
+      <review_count>15</review_count>
+      <stock_status>in_stock</stock_status>
+      <final_price>52000</final_price>
+      <sku>3</sku>
+    </product>
+
+    <product>
+      <id>4</id>
+      <name>Sách Tiếng Anh 12 - Sách bài tập</name>
+      <slug>sach-tieng-anh-12-bai-tap</slug>
+      <type>book</type>
+      <category>Sách Giáo Khoa</category>
+      <author>Bộ Giáo Dục &amp; Đào Tạo</author>
+      <publisher>XYZ Publishing</publisher>
+      <description>Tiếng Anh 12 - Sách bài tập giúp học sinh luyện tập kỹ năng ngôn ngữ, ôn tập kiến thức từ vựng, ngữ pháp, và các kỹ năng giao tiếp cơ bản.</description>
+      <price>98000</price>
+      <currency>VND</currency>
+      <stock_quantity>195</stock_quantity>
+      <sold_quantity>85</sold_quantity>
+      <image>sach_ta_12_bt.jpg</image>
+      <image_url>https://bookzone.vn/assets/images/products/sach_ta_12_bt.jpg</image_url>
+      <rating>4.3</rating>
+      <review_count>19</review_count>
+      <stock_status>in_stock</stock_status>
+      <final_price>98000</final_price>
+      <sku>4</sku>
+    </product>
+
+    <product>
+      <id>5</id>
+      <name>Sách Đắc Nhân Tâm</name>
+      <slug>sach-dac-nhan-tam</slug>
+      <type>book</type>
+      <category>Sách Phát Triển Kỹ Năng</category>
+      <author>Dale Carnegie</author>
+      <publisher>ABC Books</publisher>
+      <description>Đắc Nhân Tâm - Dale Carnegie. Cuốn sách kinh điển về phát triển kỹ năng sống, giao tiếp, và xây dựng mối quan hệ tốt với mọi người. Sách được dịch và in tại Việt Nam, giúp người đọc cải thiện kỹ năng mềm và nhân cách.</description>
+      <price>85000</price>
+      <currency>VND</currency>
+      <stock_quantity>298</stock_quantity>
+      <sold_quantity>120</sold_quantity>
+      <image>dac-nhan-tam-1.jpg</image>
+      <image_url>https://bookzone.vn/assets/images/products/dac-nhan-tam-1.jpg</image_url>
+      <rating>4.7</rating>
+      <review_count>87</review_count>
+      <stock_status>in_stock</stock_status>
+      <final_price>85000</final_price>
+      <sku>5</sku>
+    </product>
+  </products>
+
+</bookstore>

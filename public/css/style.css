@@ -1,0 +1,457 @@
+:root {
+  --primary-color: #0dfd69;
+
+  --bs-blue: #4774b8;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0dfd69;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+}
+
+/* Primary color set above. Custom .btn-primary rules were removed to prefer Bootstrap defaults. */
+
+body {
+  font-family: "Segoe UI", sans-serif;
+
+}
+
+/* Anchor reset removed; using Bootstrap base link styles. */
+
+nav {
+  background-color: white;
+}
+
+footer {
+  background-color: white;
+}
+
+
+.fmenu ul li a:hover {
+  color: #0d6efd !important;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+main {
+  background-color: #f8f9fa;
+
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+/* Banner styles */
+/* Caption làm mờ nền siêu đẹp */
+.caption-blur {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  padding: 12px 18px;
+}
+
+/* Làm controls nổi bật hơn */
+.banner-control {
+  filter: drop-shadow(0 0 4px black);
+}
+
+
+/* removed unused .card1 and commented btn-primary rules to keep CSS tidy */
+
+.book-detail-wrapper {
+  margin-top: 30px;
+}
+
+/* book-detail-wrapper remains; removed unused image/price/info helpers to simplify CSS */
+
+/* Product card styles cho cửa hàng văn phòng phẩm */
+.product-card {
+  padding-top: 8px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.product-card:active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* Hình ảnh sản phẩm */
+.product-card .card-img-wrapper {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-card .card-img-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover .card-img-wrapper img {
+  transform: scale(1.05);
+}
+
+/* Nội dung sản phẩm */
+.product-card .card-body {
+  padding: 0.75rem;
+}
+
+.product-card .card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  color: #212529;
+}
+
+.product-card .card-text {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+/* Nút hành động */
+.product-card .btn-sm {
+  padding: 0.4rem 0.4rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+
+}
+
+
+/* Responsive */
+@media (max-width: 576px) {
+  .product-card .card-img-wrapper {
+    height: 140px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-card .card-img-wrapper {
+    height: 180px;
+  }
+}
+
+
+/* Styles for service status page (moved from app/views/services_status/statusPage.php) */
+.service-status-card {
+  max-width: 600px;
+  margin: 1.5rem auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: .6rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden
+}
+
+.service-status-icon {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-status-body {
+  padding: 0.5rem
+}
+
+.service-status-title {
+  font-size: 1.25rem;
+  margin-bottom: 12.35rem;
+}
+
+.service-status-code {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.03);
+  padding: .18rem .5rem;
+  border-radius: .35rem
+}
+
+@media (max-width:576px) {
+  .service-status-icon {
+    width: 100%;
+    height: 120px
+  }
+}
+
+/* small helpers */
+.service-status-body .badge {
+  font-weight: 600
+}
+
+.service-status-body p.small {
+  margin-bottom: 0
+}
+
+.service-status-icon img {
+  max-width: 110px;
+}
+
+/* Hiệu ứng hover cho hàng */
+.cart-row:hover {
+  background: #f1f5f9;
+  /* màu sáng hơn, dễ nhìn */
+  transition: background 0.2s ease;
+  transform: translateY(-2px);
+}
+
+/* Bảng tổng thể */
+.cart-table {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+/* Header */
+.cart-table thead tr {
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.cart-table th {
+  padding: 14px;
+  font-weight: 600;
+  /* color: #4b5563; */
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+/* Ảnh sản phẩm */
+.cart-thumb {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease-in-out;
+}
+
+.cart-thumb:hover {
+  transform: scale(1.05);
+}
+
+/* Input số lượng */
+.quantity-box input {
+  border-left: none;
+  border-right: none;
+  font-weight: 600;
+  text-align: center;
+}
+
+.quantity-box button {
+  width: 32px;
+}
+
+/* Nút xóa */
+.delete-btn i {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.delete-btn:hover i {
+  transform: scale(1.15);
+  color: #dc3545;
+}
+
+/* Input số lượng trong bảng */
+.cart-table .qty-input {
+  max-width: 60px;
+}
+/* Using Bootstrap's built-in responsive table behavior.
+   Custom table CSS removed to prefer default Bootstrap styles. */
+
+
+/* ===================================
+   Banner Carousel Styles (Home Page)
+   =================================== */
+
+/* Banner Responsive */
+.banner-height {
+  max-height: 600px;
+}
+
+.banner-img {
+  object-fit: fill;
+  object-position: center 50%;
+  height: 600px;
+  width: 100%;
+  transition: transform 0.6s ease, filter 0.3s ease;
+}
+
+.carousel-item:hover .banner-img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.banner-title {
+  font-size: 2.5rem;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item:hover .banner-title {
+  transform: translateX(10px);
+}
+
+.banner-text {
+  font-size: 1.25rem;
+  transition: transform 0.3s ease 0.1s;
+}
+
+.carousel-item:hover .banner-text {
+  transform: translateX(10px);
+}
+
+.banner-btn {
+  font-size: 1.125rem;
+  transition: all 0.3s ease 0.2s;
+}
+
+.carousel-item:hover .banner-btn {
+  transform: translateX(10px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+}
+
+.banner-caption {
+  margin-right: auto;
+  transition: background 0.3s ease;
+}
+
+.carousel-item:hover .banner-caption {
+  background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.25) 70%, transparent 100%) !important;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .banner-height {
+    max-height: 400px;
+  }
+  
+  .banner-img {
+    height: 400px;
+    object-position: center 40%;
+  }
+  
+  .banner-title {
+    font-size: 2rem;
+  }
+  
+  .banner-text {
+    font-size: 1.1rem;
+  }
+  
+  .banner-btn {
+    font-size: 1rem;
+  }
+  
+  .banner-caption {
+    max-width: 60% !important;
+    padding-left: 5% !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .banner-height {
+    max-height: 300px;
+  }
+  
+  .banner-img {
+    height: 300px;
+    object-position: center 35%;
+  }
+  
+  .banner-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .banner-text {
+    font-size: 0.95rem;
+    margin-bottom: 1rem !important;
+  }
+  
+  .banner-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem !important;
+  }
+  
+  .banner-caption {
+    max-width: 70% !important;
+    padding-left: 5% !important;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10% !important;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+  .banner-height {
+    max-height: 250px;
+  }
+  
+  .banner-img {
+    height: 250px;
+    object-position: center 30%;
+  }
+  
+  .banner-title {
+    font-size: 1.2rem;
+  }
+  
+  .banner-text {
+    font-size: 0.85rem;
+    display: none; /* Ẩn text phụ trên màn hình rất nhỏ */
+  }
+  
+  .banner-btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem !important;
+  }
+  
+  .banner-caption {
+    max-width: 80% !important;
+    padding-left: 4% !important;
+  }
+}

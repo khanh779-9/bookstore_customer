@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>BookZone - Sách &amp; Văn Phòng Phẩm</title>
+    <link>https://bookzone.vn</link>
+    <description>Cửa hàng bán sách và văn phòng phẩm chất lượng cao tại TP.HCM</description>
+    
+    <item>
+      <g:id>1</g:id>
+      <g:title>Sách Toán 10 - Bộ Cánh Diều</g:title>
+      <g:description>Sách giáo khoa Toán 10 Bộ Cánh Diều Tập 1 là tài liệu chính thống được sử dụng rộng rãi tại nhiều trường THPT</g:description>
+      <g:link>https://bookzone.vn/products/1</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/toan10_canhdieu_tap_1.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>45000 VND</g:price>
+      <g:brand>Bộ Giáo Dục</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>2</g:id>
+      <g:title>Sách Ngữ văn 11 - Tập 1</g:title>
+      <g:description>Ngữ văn 11 Tập 1 là tài liệu giáo dục chất lượng cho học sinh lớp 11</g:description>
+      <g:link>https://bookzone.vn/products/2</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/Ngu-Van-11-Tap-1-600x853.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>50000 VND</g:price>
+      <g:sale_price>40000 VND</g:sale_price>
+      <g:brand>Bộ Giáo Dục</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>3</g:id>
+      <g:title>Sách Tiếng Anh 12 - Sách học sinh</g:title>
+      <g:description>Tiếng Anh 12 Sách học sinh là tài liệu học tập tiếng Anh chuẩn cho học sinh lớp 12</g:description>
+      <g:link>https://bookzone.vn/products/3</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/ta12-global.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>52000 VND</g:price>
+      <g:brand>Bộ Giáo Dục</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>4</g:id>
+      <g:title>Sách Tiếng Anh 12 - Sách bài tập</g:title>
+      <g:description>Tiếng Anh 12 Sách bài tập giúp học sinh luyện tập kỹ năng ngôn ngữ</g:description>
+      <g:link>https://bookzone.vn/products/4</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/sach_ta_12_bt.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>98000 VND</g:price>
+      <g:brand>Bộ Giáo Dục</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>5</g:id>
+      <g:title>Sách Đắc Nhân Tâm</g:title>
+      <g:description>Đắc Nhân Tâm Dale Carnegie cuốn sách kinh điển về phát triển kỹ năng sống</g:description>
+      <g:link>https://bookzone.vn/products/5</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/dac-nhan-tam-1.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>85000 VND</g:price>
+      <g:brand>Dale Carnegie</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>6</g:id>
+      <g:title>Sách Harry Potter và Hòn đá Phù triết gia - Tập 1</g:title>
+      <g:description>Harry Potter và Hòn đá Phù Thủy cuốn mở đầu nổi tiếng trong loạt truyện của J.K. Rowling</g:description>
+      <g:link>https://bookzone.vn/products/6</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/Sach-Noi-Harry-Potter-Tap-1-J-K-Rowling-audio-book-sachnoi.cc-4.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>135000 VND</g:price>
+      <g:sale_price>101250 VND</g:sale_price>
+      <g:brand>J.K. Rowling</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>7</g:id>
+      <g:title>Vở Hồng Hà 96 trang (10 quyển/lốc)</g:title>
+      <g:description>Vở Hồng Hà 96 trang được làm từ giấy trắng sáng mịn không lem mực</g:description>
+      <g:link>https://bookzone.vn/products/7</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/vo_hong_ha_96t.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>82000 VND</g:price>
+      <g:brand>Hồng Hà</g:brand>
+      <g:google_product_category>Office Supplies</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>21</g:id>
+      <g:title>Thước kẻ bằng nhôm 30cm</g:title>
+      <g:description>Thước nhôm 30cm là dụng cụ đo đạc bền bỉ phù hợp cho học sinh sinh viên</g:description>
+      <g:link>https://bookzone.vn/products/21</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/thuoc_nhom_30cm.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>15000 VND</g:price>
+      <g:brand>Aluminum</g:brand>
+      <g:google_product_category>Office Supplies</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>24</g:id>
+      <g:title>Từ điển y học sức khoẻ bệnh lý (Anh - Việt)</g:title>
+      <g:description>Từ điển Y học Sức khoẻ Bệnh lý Anh Việt là tài liệu tổng hợp các thuật ngữ chuyên ngành</g:description>
+      <g:link>https://bookzone.vn/products/24</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/td04.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>35000 VND</g:price>
+      <g:brand>Dictionary</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>26</g:id>
+      <g:title>Từ điển mẫu câu tiếng Nhật</g:title>
+      <g:description>Từ điển Mẫu câu tiếng Nhật là tài liệu tổng hợp các câu giao tiếp tiếng Nhật</g:description>
+      <g:link>https://bookzone.vn/products/26</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/td01.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>54000 VND</g:price>
+      <g:brand>Dictionary</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>27</g:id>
+      <g:title>Kế toán doanh nghiệp ACCESS</g:title>
+      <g:description>Cuốn sách Kế toán Doanh nghiệp ACCESS giới thiệu cách ứng dụng Microsoft Access vào kế toán</g:description>
+      <g:link>https://bookzone.vn/products/27</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th12.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>70000 VND</g:price>
+      <g:brand>Microsoft</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>28</g:id>
+      <g:title>Hộp tập giấy A4 - 400 tờ</g:title>
+      <g:description>Hộp tập giấy A4 400 tờ được sản xuất từ giấy chất lượng cao bề mặt mịn trắng sáng</g:description>
+      <g:link>https://bookzone.vn/products/28</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/tap-giay-a4-400-to.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>100000 VND</g:price>
+      <g:brand>Paper</g:brand>
+      <g:google_product_category>Office Supplies</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>29</g:id>
+      <g:title>Từ Điển Kinh Doanh Và Tiếp Thị Hiện Đại</g:title>
+      <g:description>Từ điển Kinh doanh Tiếp thị Hiện đại trình bày các thuật ngữ kinh doanh hiện đại</g:description>
+      <g:link>https://bookzone.vn/products/29</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/td02.gif</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>23000 VND</g:price>
+      <g:brand>Dictionary</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>30</g:id>
+      <g:title>Đại Từ Điển Tiếng Việt (Bản mới 2010)</g:title>
+      <g:description>Đại từ điển tiếng Việt là công trình đầy đặn và đồ sộ nhất về kho tàng tiếng Việt</g:description>
+      <g:link>https://bookzone.vn/products/30</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/td03.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>25000 VND</g:price>
+      <g:brand>Dictionary</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>31</g:id>
+      <g:title>Từ Điển Anh Việt - 75000 Từ</g:title>
+      <g:description>Từ điển Anh Việt với 75000 từ vựng và các định nghĩa chi tiết</g:description>
+      <g:link>https://bookzone.vn/products/31</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/td05.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>50000 VND</g:price>
+      <g:brand>Dictionary</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>32</g:id>
+      <g:title>Từ điển địa danh hành chính Nam Bộ</g:title>
+      <g:description>Từ điển địa danh hành chính Nam Bộ do tác giả Nguyễn Đình Tư biên soạn công phu</g:description>
+      <g:link>https://bookzone.vn/products/32</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/td06.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>300000 VND</g:price>
+      <g:brand>Dictionary</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>33</g:id>
+      <g:title>Sách 100 thủ thuật với Excel 2010</g:title>
+      <g:description>100 thủ thuật Excel 2010 thực hành chi tiết giúp làm việc hiệu quả</g:description>
+      <g:link>https://bookzone.vn/products/33</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th01.gif</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>60000 VND</g:price>
+      <g:brand>Microsoft</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>34</g:id>
+      <g:title>Lập trình web bằng PHP 5.3 và cơ sở dữ liệu MySQL</g:title>
+      <g:description>Tập 2 cuốn sách Lập trình Web bằng PHP 5.3 và cơ sở dữ liệu MySQL 5.1 gồm 10 chương</g:description>
+      <g:link>https://bookzone.vn/products/34</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th02.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>80000 VND</g:price>
+      <g:brand>PHP Programming</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>35</g:id>
+      <g:title>Lập trình web bằng PHP 5.3 và cơ sở dữ liệu MySQL 5.1 (Tập 1)</g:title>
+      <g:description>Tập 1 cuốn sách Lập trình Web bằng PHP 5.3 và cơ sở dữ liệu MySQL 5.1 gồm 7 chương</g:description>
+      <g:link>https://bookzone.vn/products/35</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th03.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>80000 VND</g:price>
+      <g:brand>PHP Programming</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>36</g:id>
+      <g:title>Làm Quen Với Internet</g:title>
+      <g:description>Hướng dẫn làm quen với máy vi tính và Internet cho người mới bắt đầu</g:description>
+      <g:link>https://bookzone.vn/products/36</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th04.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>35000 VND</g:price>
+      <g:brand>Technology</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>37</g:id>
+      <g:title>Từng Bước Làm Quen Với Máy Tính</g:title>
+      <g:description>Hướng dẫn từng bước làm quen với máy tính điện tử và Windows XP</g:description>
+      <g:link>https://bookzone.vn/products/37</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th05.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>35000 VND</g:price>
+      <g:brand>Technology</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>38</g:id>
+      <g:title>Quản Trị Windows Server 2008 - Tập 2</g:title>
+      <g:description>Quản trị Windows Server 2008 tập 2 với những tính năng nâng cao</g:description>
+      <g:link>https://bookzone.vn/products/38</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th06.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>65000 VND</g:price>
+      <g:brand>Microsoft</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>39</g:id>
+      <g:title>Kỹ Thuật Lập Trình C - Cơ Sở Và Nâng Cao</g:title>
+      <g:description>Lập trình C từ cơ bản đến nâng cao với các khái niệm hằng biến mảng và con trỏ</g:description>
+      <g:link>https://bookzone.vn/products/39</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th06.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>80000 VND</g:price>
+      <g:brand>C Programming</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>40</g:id>
+      <g:title>Giáo Trình Học Nhanh SQL Server 2008 - Tập 2</g:title>
+      <g:description>SQL Server 2008 tập 2 dành cho lập trình viên và quản trị cơ sở dữ liệu</g:description>
+      <g:link>https://bookzone.vn/products/40</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th08.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>90000 VND</g:price>
+      <g:brand>Microsoft</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>41</g:id>
+      <g:title>160 Vấn Đề Cần Nên Biết Khi Sử Dụng Đồ Họa Máy Vi Tính</g:title>
+      <g:description>160 vấn đề về đồ họa máy vi tính với Photoshop CorelDRAW và Illustrator</g:description>
+      <g:link>https://bookzone.vn/products/41</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th09.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>100000 VND</g:price>
+      <g:brand>Graphics</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>42</g:id>
+      <g:title>Giáo Trình Học Nhanh SQL Server 2008 - Tập 1</g:title>
+      <g:description>SQL Server 2008 tập 1 trình bày những tính năng chính của SQL Server</g:description>
+      <g:link>https://bookzone.vn/products/42</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th10.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>70000 VND</g:price>
+      <g:brand>Microsoft</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>43</g:id>
+      <g:title>Microsoft Word 2007 - Căn Bản Và Thủ Thuật</g:title>
+      <g:description>Word 2007 cơ bản và thủ thuật với giao diện Ribbon mới</g:description>
+      <g:link>https://bookzone.vn/products/43</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th11.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>75000 VND</g:price>
+      <g:brand>Microsoft</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>44</g:id>
+      <g:title>Kế Toán Doanh Nghiệp Với ACCESS</g:title>
+      <g:description>Kế toán doanh nghiệp với Microsoft Access hướng dẫn xây dựng hệ thống</g:description>
+      <g:link>https://bookzone.vn/products/44</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th12.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>80000 VND</g:price>
+      <g:brand>Microsoft</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>45</g:id>
+      <g:title>Giáo Trình C++ &amp; Lập Trình Hướng Đối Tượng</g:title>
+      <g:description>C++ và lập trình hướng đối tượng gồm 12 chương và 7 phụ lục</g:description>
+      <g:link>https://bookzone.vn/products/45</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th13.gif</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>83000 VND</g:price>
+      <g:brand>C++</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>46</g:id>
+      <g:title>Các Thủ Thuật Trong HTML Và Thiết Kế Web</g:title>
+      <g:description>Thủ thuật HTML và thiết kế Web giúp tăng tốc độ thiết kế website</g:description>
+      <g:link>https://bookzone.vn/products/46</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th14.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>100000 VND</g:price>
+      <g:brand>Web Design</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>47</g:id>
+      <g:title>Tạo Website Hấp Dẫn Với HTML, XHTML Và CSS</g:title>
+      <g:description>Tạo Website với HTML XHTML và CSS từ cơ bản đến nâng cao</g:description>
+      <g:link>https://bookzone.vn/products/47</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th15.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>90000 VND</g:price>
+      <g:brand>Web Design</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>48</g:id>
+      <g:title>Tuyển Tập Thủ Thuật Javascript - Tập 1</g:title>
+      <g:description>Thủ thuật Javascript tập 1 với các giải pháp cho vấn đề phổ biến</g:description>
+      <g:link>https://bookzone.vn/products/48</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th16.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>72000 VND</g:price>
+      <g:brand>JavaScript</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>49</g:id>
+      <g:title>Thiết Kế Web Với CSS</g:title>
+      <g:description>Thiết kế Web với CSS giúp làm thay đổi cách thiết kế website hiện đại</g:description>
+      <g:link>https://bookzone.vn/products/49</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th17.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>90000 VND</g:price>
+      <g:brand>CSS</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>50</g:id>
+      <g:title>Thiết Kế Web Với JavaScript Và Dom</g:title>
+      <g:description>Thiết kế Web với JavaScript và DOM giới thiệu ngôn ngữ lập trình JavaScript</g:description>
+      <g:link>https://bookzone.vn/products/50</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/th18.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>92000 VND</g:price>
+      <g:brand>JavaScript</g:brand>
+      <g:google_product_category>Media &gt; Books</g:google_product_category>
+    </item>
+    
+    <item>
+      <g:id>51</g:id>
+      <g:title>Sản phẩm văn phòng phẩm</g:title>
+      <g:description>Văn phòng phẩm chất lượng cao cho học sinh và dân văn phòng</g:description>
+      <g:link>https://bookzone.vn/products/51</g:link>
+      <g:image_link>https://bookzone.vn/assets/images/products/51-2.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>230000 VND</g:price>
+      <g:brand>Office</g:brand>
+      <g:google_product_category>Office Supplies</g:google_product_category>
+    </item>
+    
+  </channel>
+</rss>
