@@ -85,7 +85,7 @@ class AuthController extends BaseController
         $_SESSION['success'] = 'Chào mừng ' . htmlspecialchars($_SESSION['khachhang_account']['ho_ten']);
 
         include_once __DIR__ . "/../models/notification.php";
-        include_once __DIR__ . "/helpers.php";
+        include_once __DIR__ . "/../helpers.php";
 
         $agent = getLoginAgent();
 
@@ -114,7 +114,7 @@ class AuthController extends BaseController
 
         return $this->redirect('index.php');
     }
-    
+
     public function loginWithGoogle()
     {
         require_once __DIR__ . '/../login_with_google_helper.php';
