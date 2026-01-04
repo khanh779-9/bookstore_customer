@@ -114,6 +114,7 @@ class AuthController extends BaseController
 
         return $this->redirect('index.php');
     }
+    
     public function loginWithGoogle()
     {
         require_once __DIR__ . '/../login_with_google_helper.php';
