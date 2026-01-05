@@ -243,7 +243,8 @@ class OrdersModel
                     NotificationModel::createNotification(
                         $customerId,
                         "Đơn hàng",
-                        "Đơn hàng #$hoadon_id của bạn đã được tạo thành công."
+                        "Đơn hàng #$hoadon_id của bạn đã được tạo thành công.",
+                        'don_hang'
                     );
                 } catch (Throwable $__) {
                 }

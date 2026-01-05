@@ -52,12 +52,12 @@ class NotificationModel
         return (int)($result['count'] ?? 0);
     }
 
-    public static function createNotification(int $khachhang_id, string $tieu_de, string $noi_dung): bool
+    public static function createNotification(int $khachhang_id, string $tieu_de, string $noi_dung, string $loai='khach_hang'): bool
     {
         $pdo = self::getPdo();
         try {
             $stmt = $pdo->prepare("INSERT INTO thongbao (khachhang_id, tieu_de, noi_dung, ngay_tao, loai) VALUES (:khachhang_id, :tieu_de, :noi_dung, NOW(), :loai)");
-            return $stmt->execute([':khachhang_id' => $khachhang_id, ':tieu_de' => $tieu_de, ':noi_dung' => $noi_dung, ':loai' => 'don_hang']);
+            return $stmt->execute([':khachhang_id' => $khachhang_id, ':tieu_de' => $tieu_de, ':noi_dung' => $noi_dung, ':loai' => $loai]);
         } catch (PDOException $e) {
             error_log("Lỗi tạo thông báo: " . $e->getMessage());
             return false;
