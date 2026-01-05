@@ -1,5 +1,8 @@
 FROM php:8.2-apache
 
+# Fix MPM conflict
+RUN a2dismod mpm_event && a2dismod mpm_worker && a2enmod mpm_prefork
+
 # Enable rewrite
 RUN a2enmod rewrite
 
@@ -16,5 +19,7 @@ RUN rm -f /var/www/html/index.html
 COPY . /var/www/html/
 RUN chown -R www-data:www-data /var/www/html
 
-# Force Apache to listen to Railway PORT at runtime
+EXPOSE 80
+
+# Apache listen đúng PORT Railway
 CMD bash -c "echo Listen \$PORT > /etc/apache2/ports.conf && apache2-foreground"
