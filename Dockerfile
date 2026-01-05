@@ -12,7 +12,7 @@ RUN a2dismod mpm_event && a2enmod mpm_prefork && a2enmod rewrite
 RUN echo "date.timezone=Asia/Ho_Chi_Minh" > /etc/php/7.4/apache2/conf.d/timezone.ini
 
 # Apache listen đúng PORT Railway
-RUN sed -i "s/80/\${PORT}/g" /etc/apache2/ports.conf && \
+RUN sed -i "s/Listen 80/Listen ${PORT}/" /etc/apache2/ports.conf && \
     sed -i "s/:80/:${PORT}/g" /etc/apache2/sites-enabled/000-default.conf
 
 # Copy source
