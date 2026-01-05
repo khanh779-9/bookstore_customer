@@ -18,5 +18,5 @@ RUN chown -R www-data:www-data /var/www/html
 EXPOSE 80
 
 CMD bash -c "echo Listen \$PORT > /etc/apache2/ports.conf && apachectl -D FOREGROUND"
-CMD ["apache2-foreground"]
+# CMD ["apache2-foreground"]
 
