@@ -7,6 +7,7 @@ RUN apt-get update && \
     apt-get clean
 
 RUN a2enmod rewrite
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 # Xóa trang mặc định của Apache
 RUN rm -f /var/www/html/index.html
