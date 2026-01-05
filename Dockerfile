@@ -7,7 +7,7 @@ RUN apt-get update && \
     apt-get clean
 
 RUN a2enmod rewrite
-RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+# RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 # Xóa trang mặc định của Apache
 RUN rm -f /var/www/html/index.html
@@ -18,4 +18,5 @@ RUN chown -R www-data:www-data /var/www/html
 EXPOSE 80
 
 CMD bash -c "echo Listen \$PORT > /etc/apache2/ports.conf && apachectl -D FOREGROUND"
+CMD ["apache2-foreground"]
 
