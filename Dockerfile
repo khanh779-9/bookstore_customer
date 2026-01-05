@@ -1,5 +1,8 @@
 FROM php:8.2-apache
 
+# Remove all MPM modules to avoid conflict 
+RUN rm -f /etc/apache2/mods-enabled/mpm_event.load \ && rm -f /etc/apache2/mods-enabled/mpm_event.conf \ && rm -f /etc/apache2/mods-enabled/mpm_worker.load \ && rm -f /etc/apache2/mods-enabled/mpm_worker.conf
+
 # Disable event MPM and enable prefork (fix Apache MPM conflict)
 RUN a2dismod mpm_event && a2enmod mpm_prefork
 
@@ -18,6 +21,8 @@ RUN sed -i "s/:80/:${PORT}/g" /etc/apache2/sites-enabled/000-default.conf
 
 # Copy source
 COPY . /var/www/html/
+
+RUN find /var/www/html -type f -name "*.conf" -delete \ && find /var/www/html -type f -name ".htaccess" -delete
 
 # Permissions
 RUN chown -R www-data:www-data /var/www/html
