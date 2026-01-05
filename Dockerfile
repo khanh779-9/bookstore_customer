@@ -4,7 +4,7 @@ FROM debian:bookworm
 RUN apt-get update && \
     apt-get install -y apache2 php php-cli php-mysql libapache2-mod-php \
     php-mbstring php-intl php-curl php-zip php-gd php-pdo php-pdo-mysql php-mysqli && \
-    apt-get cleann
+    apt-get clean
 
 RUN a2enmod rewrite
 
