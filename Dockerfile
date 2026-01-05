@@ -13,7 +13,7 @@ RUN echo "date.timezone=Asia/Ho_Chi_Minh" > /etc/php/8.2/apache2/conf.d/timezone
 
 # Apache listen đúng PORT Railway
 RUN sed -i "s/Listen 80/Listen \${PORT}/" /etc/apache2/ports.conf && \
-    sed -i "s/:80/:\${PORT}/" /etc/apache2/sites-enabled/000-default.conf
+    sed -i "s/:80/:${PORT}/" /etc/apache2/sites-enabled/000-default.conf
 
 # Copy source
 COPY . /var/www/html/
