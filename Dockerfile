@@ -17,5 +17,7 @@ RUN chown -R www-data:www-data /var/www/html
 
 EXPOSE 80
 
+RUN rm -f /var/www/html/index.html
+
 # Railway PORT binding
 CMD bash -c "echo Listen \$PORT > /etc/apache2/ports.conf && apachectl -D FOREGROUND"
