@@ -1,5 +1,8 @@
 FROM debian:bookworm
 
+# Remove all MPM modules to avoid conflict 
+RUN rm -f /etc/apache2/mods-enabled/mpm_event.load \ && rm -f /etc/apache2/mods-enabled/mpm_event.conf \ && rm -f /etc/apache2/mods-enabled/mpm_worker.load \ && rm -f /etc/apache2/mods-enabled/mpm_worker.conf
+
 # Install Apache + PHP
 RUN apt-get update && \
     apt-get install -y apache2 php php-cli php-mysql libapache2-mod-php && \
