@@ -22,7 +22,7 @@ RUN sed -i "s/:80/:${PORT}/g" /etc/apache2/sites-enabled/000-default.conf
 # Copy source
 COPY . /var/www/html/
 
-RUN find /var/www/html -type f -name "*.conf" -delete \ && find /var/www/html -type f -name ".htaccess" -delete
+RUN find /var/www/html -name '*.conf' -delete && find /var/www/html -name '.htaccess' -delete
 
 # Permissions
 RUN chown -R www-data:www-data /var/www/html
