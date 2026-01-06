@@ -15,11 +15,19 @@ return [
 //         'pass' => 'VX8fKDvYtSa',
 //         'charset' => 'utf8mb4',
 //     ],
-     'db' => [
-       'host' => 'ballast.proxy.rlwy.net:46056',
+
+//   'db' => [
+//        'host' => 'ballast.proxy.rlwy.net:46056',
+//        'dbname' => 'db_nhasach',
+//        'user' => 'root',
+//        'pass' => 'EAWCmeStFTZmgsBTBSgZuFWeRyaiZnfL',
+//        'charset' => 'utf8mb4',
+//    ],
+ 'db' => [
+       'host' => 'mysql-27a83fda-student-f2b3.l.aivencloud.com:27029',
        'dbname' => 'db_nhasach',
-       'user' => 'root',
-       'pass' => 'EAWCmeStFTZmgsBTBSgZuFWeRyaiZnfL',
+       'user' => 'avnadmin',
+       'pass' => 'AVNS_TmhA_a6A6Na-xEsYnV8',
        'charset' => 'utf8mb4',
    ],
     'base_url' => '/', 
