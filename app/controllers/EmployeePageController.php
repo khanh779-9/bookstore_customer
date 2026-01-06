@@ -63,6 +63,7 @@ class EmployeePageController
         // Use models for data access and server-side pagination
         $subpage = $subpage ?: 'list';
         $searchTerm = isset($_GET['search']) ? trim($_GET['search']) : '';
+        $categoryFilter = isset($_GET['category']) ? trim($_GET['category']) : '';
 
         $products = [];
         $pagination = null;
@@ -70,7 +71,14 @@ class EmployeePageController
             $perPage = 10;
             $currentPage = isset($_GET['p']) ? (int)$_GET['p'] : 1;
             if ($currentPage < 1) $currentPage = 1;
-            $res = ProductModel::getProductsPage($currentPage, $perPage, $searchTerm);
+            
+            // Build filters array
+            $filters = [];
+            if ($categoryFilter !== '') {
+                $filters['category'] = (int)$categoryFilter;
+            }
+            
+            $res = ProductModel::getProductsPage($currentPage, $perPage, $searchTerm, $filters);
             $products = $res['items'] ?? [];
             $total = (int)($res['total'] ?? 0);
             $totalPages = $perPage > 0 ? (int)ceil($total / $perPage) : 1;

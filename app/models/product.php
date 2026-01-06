@@ -504,4 +504,25 @@ class ProductModel
         }
         return $limit > 0 ? array_slice($arr, 0, $limit) : $arr;
     }
+
+    public static function checkProductNameExists(string $type, string $name, ?int $excludeId = null): bool
+    {
+        $pdo = self::getPdo();
+        if ($type === 'Sach') {
+            $sql = "SELECT COUNT(*) FROM sach s JOIN sanpham sp ON s.sanpham_id = sp.sanpham_id WHERE s.tenSach = :name";
+        } else {
+            $sql = "SELECT COUNT(*) FROM vanphongpham v JOIN sanpham sp ON v.sanpham_id = sp.sanpham_id WHERE v.tenVPP = :name";
+        }
+        if ($excludeId !== null) {
+            $sql .= " AND sp.sanpham_id != :excludeId";
+        }
+        $stmt = $pdo->prepare($sql);
+        $params = [':name' => $name];
+        if ($excludeId !== null) {
+            $params[':excludeId'] = $excludeId;
+        }
+        $stmt->execute($params);
+        $count = (int)$stmt->fetchColumn();
+        return $count > 0;
+    }   
 }

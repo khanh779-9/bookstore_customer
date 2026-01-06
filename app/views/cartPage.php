@@ -114,7 +114,7 @@
                                         <form action="index.php?page=cart_remove" method="POST">
                                             <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrf_token ?? '') ?>">
                                             <input type="hidden" name="product_id" value="<?= htmlspecialchars($item['sanpham_id']) ?>">
-                                            <button class="btn btn-link text-danger p-0 delete-btn" title="Xóa">
+                                            <button class="btn btn-link text-danger p-0 delete-btn" title="Xóa" onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này khỏi giỏ hàng?');" data-bs-toggle="tooltip" data-bs-placement="top">
                                                 <i class="bi bi-trash-fill fs-5"></i>
                                             </button>
                                         </form>
@@ -170,7 +170,10 @@
                             <button class="btn btn-secondary w-100 fw-bold mt-4 py-2 fs-5" disabled>Thanh toán (có sản phẩm không đủ)</button>
                             <div class="mt-2 small text-warning">Sản phẩm này không còn tồn tại hoặc số lượng ko đủ.</div>
                         <?php else: ?>
-                            <a href="index.php?page=checkout" class="btn btn-primary w-100 fw-bold mt-4 py-2 fs-5">Thanh toán ngay</a>
+                            <form action="index.php?page=checkout" method="POST" class="w-100">
+                                <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrf_token ?? '') ?>">
+                                <button type="submit" class="btn btn-primary w-100 fw-bold mt-4 py-2 fs-5">Thanh toán ngay</button>
+                            </form>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -185,9 +188,10 @@
                 <div class="fw-bold fs-5 text-primary">
                     <?= number_format($total, 0) ?>₫
                 </div>
-                <a href="index.php?page=checkout" class="btn btn-primary fw-bold px-4">
-                    Thanh toán
-                </a>
+                <form action="index.php?page=checkout" method="POST" class="m-0">
+                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrf_token ?? '') ?>">
+                    <button type="submit" class="btn btn-primary fw-bold px-4">Thanh toán</button>
+                </form>
             </div>
         </div>
 

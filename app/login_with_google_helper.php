@@ -7,7 +7,7 @@
 // Google API configuration
 define('GOOGLE_CLIENT_ID', '1084564570697-k6it48e7f356ki1leoier2jo59eoi247.apps.googleusercontent.com');  
 define('GOOGLE_CLIENT_SECRET', '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'); 
-define('GOOGLE_REDIRECT_URL', 'index.php?page=login&action=google_callback'); 
+define('GOOGLE_REDIRECT_URL', 'http://localhost:3000/index.php?page=login&action=google_callback'); 
 
 // Start session
 if(!session_id()){

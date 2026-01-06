@@ -20,6 +20,13 @@ if ($orderId > 0) {
         <a href="index.php?page=orders" class="btn btn-light border mb-5">Quay lại danh sách đơn</a>
         <h4 class="mt-3 mb-3">Chi tiết đơn hàng #<?= htmlspecialchars($order['hoadon_id']) ?></h4>
 
+        <?php if (($order['trangthai'] ?? '') === 'cho_thanh_toan'): ?>
+            <div class="alert alert-warning d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+                <div class="mb-0">Đơn hàng đang ở trạng thái chờ thanh toán. Vui lòng hoàn tất để tiếp tục xử lý.</div>
+                <a class="btn btn-success" href="index.php?page=checkout&order_id=<?= (int)($order['hoadon_id'] ?? 0) ?>">Thanh toán</a>
+            </div>
+        <?php endif; ?>
+
         <div class="row mb-3">
             <div class="col-md-6">
                 <p><strong>Khách hàng:</strong> <?= htmlspecialchars($customer['ho_ten'] ?? '') ?></p>

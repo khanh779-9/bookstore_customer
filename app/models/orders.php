@@ -172,7 +172,7 @@ class OrdersModel
     }
 
 
-    public static function createOrder(int $customerId, array $items, string $paymentMethod = 'tien_mat', $shippingOrAddress = null, bool $sendNotification = true)
+    public static function createOrder(int $customerId, array $items, string $paymentMethod = 'tien_mat', $shippingOrAddress = null, bool $sendNotification = true, string $trangthai='cho_thanh_toan')
     {
         $pdo = self::getPdo();
         try {
@@ -202,7 +202,7 @@ class OrdersModel
                     ':ngay' => date('Y-m-d H:i:s'),
                     ':tong' => $total,
                     ':pm' => $paymentMethod,
-                    ':trang' => 'cho_xac_nhan',
+                    ':trang' => $trangthai,
                     ':dc' => $dcgh_id
                 ]);
             } else {
@@ -212,7 +212,7 @@ class OrdersModel
                     ':ngay' => date('Y-m-d H:i:s'),
                     ':tong' => $total,
                     ':pm' => $paymentMethod,
-                    ':trang' => 'cho_xac_nhan'
+                    ':trang' => $trangthai
                 ]);
             }
 
@@ -237,13 +237,14 @@ class OrdersModel
 
             $pdo->commit();
 
-            if($sendNotification && class_exists('NotificationModel')) {
+            if($sendNotification ==true && class_exists('NotificationModel')) {
                 try {
                     include_once __DIR__ . '/notification.php';
+                    $tr= $trangthai=='cho_thanh_toan' ?'Vui lòng hoàn tất thanh toán.':'Vui long chờ xác nhận đơn hàng.';
                     NotificationModel::createNotification(
                         $customerId,
                         "Đơn hàng",
-                        "Đơn hàng #$hoadon_id của bạn đã được tạo thành công.",
+                        "Đơn hàng #$hoadon_id của bạn đã được tạo thành công.\n$tr",
                         'don_hang'
                     );
                 } catch (Throwable $__) {
@@ -257,6 +258,42 @@ class OrdersModel
             } catch (Throwable $__) {
             }
             error_log('createOrder failed: ' . $e->getMessage());
+            return false;
+        }
+    }
+
+    public static function finalizePendingOrder(int $hoadon_id, int $customerId, string $paymentMethod = 'tien_mat', ?int $dcgh_id = null, string $newStatus = 'cho_xac_nhan'): bool
+    {
+        $pdo = self::getPdo();
+        try {
+            $pdo->beginTransaction();
+
+            $stmt = $pdo->prepare("SELECT hoadon_id, khachhang_id, trangthai FROM hoadon WHERE hoadon_id = :id LIMIT 1");
+            $stmt->execute([':id' => $hoadon_id]);
+            $order = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if (!$order || (int)($order['khachhang_id'] ?? 0) !== $customerId || ($order['trangthai'] ?? '') !== 'cho_thanh_toan') {
+                $pdo->rollBack();
+                return false;
+            }
+
+            $sql = "UPDATE hoadon SET phuongthuc_thanhtoan = :pm, trangthai = :st, dcgh_id = :dc, tongtien = (SELECT COALESCE(SUM(soluong * dongia), 0) FROM chitiethoadon WHERE hoadon_id = :id) WHERE hoadon_id = :id";
+            $stmtUpdate = $pdo->prepare($sql);
+            $stmtUpdate->execute([
+                ':pm' => $paymentMethod,
+                ':st' => $newStatus,
+                ':dc' => $dcgh_id,
+                ':id' => $hoadon_id
+            ]);
+
+            $pdo->commit();
+            return true;
+        } catch (Throwable $e) {
+            try {
+                $pdo->rollBack();
+            } catch (Throwable $__) {
+            }
+            error_log('finalizePendingOrder failed: ' . $e->getMessage());
             return false;
         }
     }
@@ -339,5 +376,28 @@ class OrdersModel
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
         return $result ?: null;
+    }
+
+    public static function getProductsByOrderId(int $hoadon_id): array
+    {
+        $qe="
+        SELECT sp.*, cthd.soluong, cthd.dongia, cthd.thanhtien,
+               COALESCE(s.tenSach, v.tenVPP) AS ten_sanpham
+        FROM chitiethoadon cthd
+        JOIN sanpham sp ON cthd.sanpham_id = sp.sanpham_id
+        LEFT JOIN sach s ON sp.sanpham_id = s.sanpham_id
+        LEFT JOIN vanphongpham v ON sp.sanpham_id = v.sanpham_id
+        WHERE cthd.hoadon_id = :id";
+        $stmt = self::getPdo()->prepare($qe);
+        $stmt->execute([':id' => $hoadon_id]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public static function getAllOrderIsShipping(): array
+    {
+        $qe="SELECT * FROM hoadon WHERE trangthai = 'dang_giao_hang' ORDER BY ngaytao DESC";
+        $stmt = self::getPdo()->prepare($qe);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

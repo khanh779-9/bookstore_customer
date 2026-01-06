@@ -119,12 +119,26 @@ function cache_remember($key, $ttl, $cb)
 // Status helpers
 function get_order_status_badge($s)
 {
-    $m = ['cho_xac_nhan' => 'warning', 'da_xac_nhan' => 'info', 'dang_giao_hang' => 'primary', 'da_giao_hang' => 'success', 'da_huy' => 'danger'];
+    $m = [
+        'cho_thanh_toan' => 'secondary',
+        'cho_xac_nhan' => 'warning',
+        'da_xac_nhan' => 'info',
+        'dang_giao_hang' => 'primary',
+        'da_giao_hang' => 'success',
+        'da_huy' => 'danger'
+    ];
     return $m[$s] ?? 'secondary';
 }
 function translate_order_status($s)
 {
-    $t = ['cho_xac_nhan' => 'Chờ xác nhận', 'da_xac_nhan' => 'Đã xác nhận', 'dang_giao_hang' => 'Đang giao hàng', 'da_giao_hang' => 'Đã giao hàng', 'da_huy' => 'Đã hủy'];
+    $t = [
+        'cho_thanh_toan' => 'Chờ thanh toán',
+        'cho_xac_nhan' => 'Chờ xác nhận',
+        'da_xac_nhan' => 'Đã xác nhận',
+        'dang_giao_hang' => 'Đang giao hàng',
+        'da_giao_hang' => 'Đã giao hàng',
+        'da_huy' => 'Đã hủy'
+    ];
     return $t[$s] ?? $s;
 }
 

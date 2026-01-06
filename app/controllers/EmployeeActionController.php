@@ -55,6 +55,13 @@ class EmployeeController extends BaseController
         // Log payload for debugging
         error_log('Product save payload: ' . json_encode($data));
 
+        if(ProductModel::checkProductNameExists($type, $title)) {
+            $_SESSION['error'] = 'Tên sản phẩm đã tồn tại trong hệ thống.';
+            error_log('Product save failed: duplicate product name ' . $title);
+            redirect('index.php?page=employee_products');
+            return;
+        }
+
         try {
             $sanpham_id = ProductModel::addProduct($type, $data);
             if ($sanpham_id && is_numeric($sanpham_id) && $sanpham_id > 0) {

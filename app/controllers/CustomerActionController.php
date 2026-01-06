@@ -190,7 +190,17 @@ class CustomerController extends BaseController
         if (empty($product)) {
             $_SESSION['error'] = 'Sản phẩm không tồn tại.';
             redirect('index.php?page=products');
+
         }
+
+        // Tối đa 1 sản phẩm trong giỏ hàng
+        // Lấy kích thước mảng
+        // $sdize=sizeof(CartModel::getCartItems($_SESSION['khachhang_account']['id'] ?? 0));
+        // if($sdize >=1 ) {
+        //     $_SESSION['error'] = 'Tôi đa 1 sản phẩm trong giỏ hàng.';
+        //     redirect('index.php?page=products');
+        //     return;
+        // }
 
         $customer_id = $_SESSION['khachhang_account']['id'] ?? null;
         if ($customer_id) {
@@ -256,7 +266,66 @@ class CustomerController extends BaseController
     public function handleCheckout()
     {
         requireLogin();
-        redirect('index.php?page=checkout');
+        require_csrf_or_redirect($_POST['csrf_token'] ?? '', 'index.php?page=cart');
+
+        $customer_id = $_SESSION['khachhang_account']['id'] ?? null;
+        if (!$customer_id) {
+            $_SESSION['error'] = 'Vui lòng đăng nhập.';
+            redirect('index.php?page=login');
+        }
+
+        $cart_items = CartModel::getCartItems($customer_id);
+        if (empty($cart_items)) {
+            $_SESSION['error'] = 'Giỏ hàng trống.';
+            redirect('index.php?page=cart');
+        }
+
+        try {
+            foreach ($cart_items as $it) {
+                $product = ProductModel::getProductById((int)$it['sanpham_id']);
+                $stock = (int)($product['soluongton'] ?? 0);
+                if ($stock < (int)$it['soluong']) {
+                    $_SESSION['error'] = 'Sản phẩm "' . ($it['name'] ?? '') . '" không đủ số lượng trong kho.';
+                    redirect('index.php?page=cart');
+                    return;
+                }
+            }
+
+            $pendingId = $_SESSION['pending_order_id'] ?? null;
+            if ($pendingId) {
+                $pending = OrdersModel::getOrderById((int)$pendingId);
+                if ($pending && (int)($pending['khachhang_id'] ?? 0) === $customer_id && ($pending['trangthai'] ?? '') === 'cho_thanh_toan') {
+                    $_SESSION['success'] = 'Đơn hàng đang ở trạng thái chờ thanh toán. Vui lòng xác nhận & đặt hàng để hoàn tất.';
+                    redirect('index.php?page=checkout');
+                    return;
+                }
+                unset($_SESSION['pending_order_id']);
+            }
+
+            $items = [];
+            foreach ($cart_items as $it) {
+                $items[] = [
+                    'product_id' => (int)$it['sanpham_id'],
+                    'quantity' => (int)$it['soluong'],
+                    'price' => (float)($it['gia'] ?? $it['dongia'] ?? 0)
+                ];
+            }
+
+            $hoadon_id = OrdersModel::createOrder($customer_id, $items, 'tien_mat', null, true, 'cho_thanh_toan');
+            if (!$hoadon_id) {
+                $_SESSION['error'] = 'Có lỗi khi khởi tạo đơn hàng. Vui lòng thử lại.';
+                redirect('index.php?page=cart');
+                return;
+            }
+
+            $_SESSION['pending_order_id'] = $hoadon_id;
+            $_SESSION['success'] = 'Đã tạo đơn hàng ở trạng thái chờ thanh toán. Vui lòng nhấn "Xác nhận & đặt hàng" để hoàn tất.';
+            redirect('index.php?page=checkout');
+        } catch (Exception $e) {
+            app_log('Checkout init error: ' . $e->getMessage(), 'ERROR');
+            $_SESSION['error'] = 'Có lỗi khi khởi tạo đơn hàng. Vui lòng thử lại.';
+            redirect('index.php?page=cart');
+        }
     }
 
     public function handleCheckoutConfirm()
@@ -306,12 +375,27 @@ class CustomerController extends BaseController
                 ];
             }
 
-            $hoadon_id = OrdersModel::createOrder($customer_id, $items, $phuongthuc, $dcgh_id);
+            $pendingId = $_SESSION['pending_order_id'] ?? null;
+            if ($pendingId) {
+                $finalized = OrdersModel::finalizePendingOrder((int)$pendingId, $customer_id, $phuongthuc, $dcgh_id, 'cho_xac_nhan');
+                if ($finalized) {
+                    CartModel::clearCart($cartRow['giohang_id']);
+                    unset($_SESSION['pending_order_id']);
+                    $_SESSION['order_id'] = (int)$pendingId;
+                    $_SESSION['success'] = 'Đặt hàng thành công! Đơn hàng đang chờ xác nhận. Mã: #' . (int)$pendingId;
+                    redirect('index.php?page=orders');
+                    return;
+                }
+            }
+
+            $hoadon_id = OrdersModel::createOrder($customer_id, $items, $phuongthuc, $dcgh_id, true, 'cho_xac_nhan');
             if (!$hoadon_id) {
                 $_SESSION['error'] = 'Có lỗi khi xử lý đơn hàng. Vui lòng thử lại.';
                 redirect('index.php?page=checkout');
                 return;
             }
+
+            $_SESSION['order_id'] = $hoadon_id;
 
             // Xoá giỏ hàng sau khi đặt hàng thành công
             CartModel::clearCart($cartRow['giohang_id']);

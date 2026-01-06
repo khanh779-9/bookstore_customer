@@ -3,6 +3,7 @@
 // If preparer provided data use it, otherwise fallback to existing model calls
 $items = $cart_items ?? [];
 $total = $cart_total ?? 0;
+$pendingOrderId = $_SESSION['pending_order_id'] ?? null;
 if (empty($items) && !empty($customer)) {
     $items = CartModel::getCartItems($customer['id']);
     foreach ($items as $it) $total += (($it['gia'] ?? 0) * ($it['soluong'] ?? 0));
@@ -15,6 +16,10 @@ if (empty($customer)) {
 ?>
 <div class="container mt-5">
     <h2 class="fw-bold mb-4">Thanh toán</h2>
+
+    <?php if ($pendingOrderId): ?>
+        <div class="alert alert-warning">Đơn hàng #<?= (int)$pendingOrderId ?> đang ở trạng thái chờ thanh toán. Vui lòng nhấn "Xác nhận & đặt hàng" để hoàn tất.</div>
+    <?php endif; ?>
 
     <?php if (empty($items)): ?>
         <div class="alert alert-info">Giỏ hàng trống.</div>

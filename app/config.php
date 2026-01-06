@@ -16,12 +16,12 @@ return [
 //         'charset' => 'utf8mb4',
 //     ],
      'db' => [
-        'host' => 'ballast.proxy.rlwy.net:46056',
-        'dbname' => 'db_nhasach',
-        'user' => 'root',
-        'pass' => 'EAWCmeStFTZmgsBTBSgZuFWeRyaiZnfL',
-        'charset' => 'utf8mb4',
-    ],
+       'host' => 'ballast.proxy.rlwy.net:46056',
+       'dbname' => 'db_nhasach',
+       'user' => 'root',
+       'pass' => 'EAWCmeStFTZmgsBTBSgZuFWeRyaiZnfL',
+       'charset' => 'utf8mb4',
+   ],
     'base_url' => '/', 
     'api_key' => null, 
     'api_rate_limit' => [ 

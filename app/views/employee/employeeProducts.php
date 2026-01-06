@@ -187,16 +187,40 @@ $loaisachs = LoaiSachModel::getAll() ?? [];
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h4 class="mb-0">Danh sách sản phẩm</h4>
 
-            <form method="GET" action="index.php" class="d-flex" style="width:300px;">
-                <input type="hidden" name="page" value="employee_products">
-                <div class="input-group">
-                    <input type="text" name="search" class="form-control" placeholder="Tìm kiếm sản phẩm..."
-                        value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
-                    <!-- <button class="btn btn-primary" type="submit">
-                        <i class="bi bi-search"></i>
-                    </button> -->
-                </div>
-            </form>
+            <div class="d-flex gap-2 align-items-center">
+                <!-- Bộ lọc theo danh mục -->
+                <select class="form-select" id="categoryFilter" style="width: 200px;">
+                    <?php
+                    $currentCategory = $_GET['category'] ?? '';
+                    $categories = [
+                        '' => 'Tất cả danh mục'
+                    ];
+                    foreach ($catalogs as $catalog) {
+                        $categories[$catalog['danhmucSP_id']] = $catalog['tenDanhMuc'];
+                    }
+                    foreach ($categories as $catId => $catName):
+                    ?>
+                        <option value="<?= htmlspecialchars($catId) ?>" <?= $currentCategory === $catId ? 'selected' : '' ?>>
+                            <?= htmlspecialchars($catName) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+
+                <!-- Tìm kiếm -->
+                <form method="GET" action="index.php" class="d-flex" style="width:300px;">
+                    <input type="hidden" name="page" value="employee_products">
+                    <?php if (!empty($_GET['category'])): ?>
+                        <input type="hidden" name="category" value="<?= htmlspecialchars($_GET['category']) ?>">
+                    <?php endif; ?>
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" placeholder="Tìm kiếm sản phẩm..."
+                            value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
+                        <!-- <button class="btn btn-primary" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button> -->
+                    </div>
+                </form>
+            </div>
 
 
             <!-- <input type="text" class="form-control" placeholder="Tìm kiếm..." style="width: 300px;" id="searchInput"> -->
@@ -288,6 +312,24 @@ $loaisachs = LoaiSachModel::getAll() ?? [];
 <?php endif; ?>
 
 <script>
+    // Category filter combobox handler
+    document.getElementById('categoryFilter')?.addEventListener('change', function() {
+        const category = this.value;
+        const urlParams = new URLSearchParams(window.location.search);
+        urlParams.set('page', 'employee_products');
+        
+        if (category) {
+            urlParams.set('category', category);
+        } else {
+            urlParams.delete('category');
+        }
+        
+        // Reset to page 1 when changing filter
+        urlParams.delete('p');
+        
+        window.location.href = 'index.php?' + urlParams.toString();
+    });
+
     // Toggle fields based on danh mục sản phẩm
 
         document.getElementById('danhmucSP_id')?.addEventListener('change', function() {
