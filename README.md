@@ -54,20 +54,33 @@ cd bookstore_customer
 ```
 
 Bước 2: Cài đặt môi trường
+
 Yêu cầu:
+
 PHP 7.x hoặc 8.x
+
 Có thể sử dụng XAMPP, WAMP hoặc Docker
 
 Bước 3: Cấu hình database
+
 Chỉnh sửa file cấu hình trong thư mục config/
+
 Thiết lập các thông tin:
+
 host
+
 username
+
 password
+
 database name
 
 Bước 4: Chạy ứng dụng
+
 Chạy local server:
+
 php -S localhost:8000
+
 Truy cập trình duyệt:
+
 http://localhost:8000
