@@ -1,9 +1,9 @@
 # Bookstore Customer
 
-Ứng dụng web dành cho khách hàng của cửa hàng sách (Bookstore Customer) được xây dựng bằng PHP.  
+Ứng dụng web dành cho khách hàng và nhân viên nội bộ của cửa hàng sách (Bookstore Customer) được xây dựng bằng PHP.  
 Dự án phục vụ mục đích học tập và thực hành xây dựng website bán hàng cơ bản.
 
-Dự án đang được chuyển đổi sang Laravel
+Dự án đang được chuyển đổi sang Laravel.
 
 ---
 
