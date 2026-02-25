@@ -19,6 +19,7 @@ Dự án tập trung vào phía khách hàng (customer side) và có thể mở 
 ---
 
 ## 2. Cấu trúc thư mục
+```
 ├── app/ Chứa logic xử lý backend
 ├── assets/ Chứa CSS, JS, hình ảnh
 ├── config/ Cấu hình hệ thống và database
@@ -30,7 +31,7 @@ Dự án tập trung vào phía khách hàng (customer side) và có thể mở 
 ├── index.php Điểm vào chính của ứng dụng
 ├── Dockerfile Cấu hình chạy bằng Docker
 └── sitemap.xml Hỗ trợ SEO
-
+```
 
 ---
 
