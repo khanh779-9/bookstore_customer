@@ -20,15 +20,15 @@ Dự án tập trung vào phía khách hàng (customer side) và có thể mở 
 
 ## 2. Cấu trúc thư mục
 ```
-├── app/ Chứa logic xử lý backend
-├── assets/ Chứa CSS, JS, hình ảnh
+├── app/ Chứa logic xử lý
+├── assets/ Chứa  hình ảnh, banner
 ├── config/ Cấu hình hệ thống và database
 ├── crawl/products/ Script thu thập dữ liệu sản phẩm
-├── public/ Thư mục truy cập từ trình duyệt
+├── public/ 
 │ ├── css/
 │ ├── js/
 │ └── images/
-├── index.php Điểm vào chính của ứng dụng
+├── index.php Trang vào trang chính
 ├── Dockerfile Cấu hình chạy bằng Docker
 └── sitemap.xml Hỗ trợ SEO
 ```
