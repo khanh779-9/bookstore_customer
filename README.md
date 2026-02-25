@@ -9,14 +9,17 @@ Dự án đang được chuyển đổi sang Laravel
 
 ## 1. Mô tả dự án
 
-Bookstore Customer là hệ thống web cho phép người dùng:
+Bookstore Customer là trang web bán hàng cho phép người dùng:
 
-- Xem danh sách sách
+- Xem danh sách sản phẩm
 - Xem chi tiết sản phẩm
 - Truy xuất dữ liệu sách
+- Quản lý sp yêu thích, giỏ hàng dành cho khách hànng
 - Thu thập dữ liệu sản phẩm thông qua module crawl
-
-Dự án tập trung vào phía khách hàng (customer side) và có thể mở rộng thêm các chức năng như giỏ hàng, đăng ký, đăng nhập và thanh toán.
+- Xem - quản lý sản phẩm & đối tác, phân phối cho nhân viên
+- Thực hiện xử lý giao dịch, đơn hàng cho nhân vuên
+- Phân quyền cho user nhân viên
+- V.v
 
 ---
 
@@ -43,7 +46,7 @@ Dự án tập trung vào phía khách hàng (customer side) và có thể mở 
 - HTML
 - CSS
 - JavaScript
-- Docker (tùy chọn)
+- Docker (tùy chọn, để chạy demo)
 
 ---
 
