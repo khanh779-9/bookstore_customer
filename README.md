@@ -4,6 +4,7 @@
 Dự án phục vụ mục đích học tập và thực hành xây dựng website bán hàng cơ bản.
 
 Dự án đang được chuyển đổi sang Laravel.
+Project: https://github.com/khanh779-9/bookstore_customer_laravel
 
 ---
 
